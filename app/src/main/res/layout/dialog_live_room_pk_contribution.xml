@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_wheat_dialog_round_white">
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_46"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_pk_dialog_top">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_left_name"
+                android:layout_width="@dimen/dp_67"
+                android:layout_height="@dimen/dp_31"
+                android:background="@drawable/bg_pk_contribution"
+                android:gravity="center"
+                android:text="我方榜单"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_13"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_right_name"
+                android:layout_width="@dimen/dp_67"
+                android:layout_height="@dimen/dp_31"
+                android:gravity="center"
+                android:text="对方榜单"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.jk.jkproject.ui.widget.NoScrollViewPager
+        android:id="@+id/live_vp_pager"
+        android:layout_below="@id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_397" />
+</RelativeLayout>

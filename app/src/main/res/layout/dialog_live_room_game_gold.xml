@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_260"
+    android:background="@drawable/bg_wheat_dialog_round_white">
+
+    <RelativeLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_33"
+        android:background="@drawable/bg_gold_game_dialog_top"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_pk_record"
+            android:layout_width="@dimen/dp_60"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:drawableBottom="@drawable/bg_wheat_line"
+            android:gravity="center_vertical"
+            android:text="开奖记录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="@dimen/dp_47"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/tv_pk_record"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:background="@drawable/bg_wheat_line" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_5"
+        android:drawableBottom="@drawable/bg_wheat_line"
+        android:gravity="center_vertical"
+        android:text="幸运硬币"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_17" />
+
+    <ImageView
+        android:id="@+id/iv_rules"
+        android:layout_width="@dimen/dp_27"
+        android:layout_height="@dimen/dp_27"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp_4"
+        android:layout_marginRight="@dimen/dp_14"
+        android:src="@mipmap/icon_pk_rules" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_289"
+        android:layout_below="@id/ll_1"
+        android:scaleType="fitXY"
+        android:src="@mipmap/icon_game_bg" />
+
+    <RelativeLayout
+        android:id="@+id/rl_game_left"
+        android:layout_width="@dimen/dp_99"
+        android:layout_height="@dimen/dp_167"
+        android:layout_below="@id/ll_1"
+        android:layout_marginLeft="@dimen/dp_7">
+
+        <ImageView
+            android:id="@+id/iv_left_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_7"
+            android:src="@drawable/bg_gold_game_select_white" />
+
+        <ImageView
+            android:id="@+id/iv_left_item_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_22"
+            android:layout_marginTop="@dimen/dp_7"
+            android:src="@mipmap/icon_game_gold_select" />
+
+        <ImageView
+            android:id="@+id/iv_left_item_gold"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/icon_game_gold_positive_select" />
+
+        <TextView
+            android:id="@+id/tv_left_title_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_left_item_gold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_6"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:gravity="center"
+            android:text="全服投入总额"
+            android:textColor="@color/color_9A9A9A"
+            android:textSize="@dimen/sp_9"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_left_total_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_left_title_1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_6"
+            android:gravity="center"
+            android:textColor="@color/color_009CF0"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_left_title_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_left_total_gold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:gravity="center"
+            android:text="最大竞猜额度"
+            android:textColor="@color/color_9A9A9A"
+            android:textSize="@dimen/sp_9"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/pb_left"
+            style="@style/mProgressBarStyle"
+            android:layout_width="@dimen/dp_83"
+            android:layout_height="@dimen/dp_17"
+            android:layout_below="@id/tv_left_title_2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:max="100"
+            android:progressDrawable="@drawable/bg_progress_gold_left" />
+
+        <TextView
+            android:id="@+id/tv_left_count"
+            android:layout_width="@dimen/dp_83"
+            android:layout_height="@dimen/dp_17"
+            android:layout_below="@id/tv_left_title_2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:gravity="center"
+            android:text="0/10千万"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/line_left_1"
+            android:layout_width="@dimen/dp_19"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/pb_left"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_19"
+            android:textColor="@color/color_FDA826" />
+
+        <TextView
+            android:id="@+id/tv_my_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pb_left"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:text="我的投入"
+            android:textColor="@color/color_9A9A9A"
+            android:textSize="@dimen/sp_9"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/line_left_2"
+            android:layout_width="@dimen/dp_19"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/pb_left"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_19"
+            android:layout_toRightOf="@id/tv_my_left"
+            android:textColor="@color/color_FDA826" />
+
+
+        <TextView
+            android:id="@+id/tv_left_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_my_left"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_6"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/color_009CF0"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_54"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_14"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/dp_7"
+            android:paddingRight="@dimen/dp_6"
+            android:scaleType="fitXY"
+            android:src="@mipmap/live_icon_gift_diamond" />
+
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/iv"
+            android:drawableRight="@mipmap/live_icon_live_room_gold_return"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/color_009BEF"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_btn_1"
+            android:layout_width="@dimen/dp_55"
+            android:layout_height="@dimen/dp_31"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_14"
+            android:layout_toLeftOf="@id/tv_btn_2"
+            android:background="@drawable/bg_gold_blue_btn"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:drawablePadding="@dimen/dp_1"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_2"
+            android:text="1000"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_btn_2"
+            android:layout_width="@dimen/dp_62"
+            android:layout_height="@dimen/dp_31"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_14"
+            android:layout_toLeftOf="@id/tv_btn_3"
+            android:background="@drawable/bg_gold_blue_btn"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:drawablePadding="@dimen/dp_1"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_2"
+            android:text="10000"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_btn_3"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="@dimen/dp_31"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_7"
+            android:background="@drawable/bg_gold_blue_btn"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:drawablePadding="@dimen/dp_1"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_2"
+            android:text="100000"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_game_right"
+        android:layout_width="@dimen/dp_99"
+        android:layout_height="@dimen/dp_167"
+        android:layout_below="@id/ll_1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_7">
+
+        <ImageView
+            android:id="@+id/iv_right_bg"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_7"
+            android:src="@drawable/bg_gold_game_unselect_gary" />
+
+        <ImageView
+            android:id="@+id/iv_right_item_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_22"
+            android:layout_marginTop="@dimen/dp_7"
+            android:src="@mipmap/icon_game_gold_unselect" />
+
+        <ImageView
+            android:id="@+id/iv_right_item_gold"
+            android:layout_width="@dimen/dp_35"
+            android:layout_height="@dimen/dp_35"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/icon_game_gold_reverse_unselect" />
+
+        <TextView
+            android:id="@+id/tv_right_title_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_right_item_gold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_6"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:gravity="center"
+            android:text="全服投入总额"
+            android:textColor="@color/color_9A9A9A"
+            android:textSize="@dimen/sp_9"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/tv_right_total_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_right_title_1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_6"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/color_009CF0"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_right_title_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_right_total_gold"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_8"
+            android:gravity="center"
+            android:text="最大竞猜额度"
+            android:textColor="@color/color_9A9A9A"
+            android:textSize="@dimen/sp_9"
+            android:textStyle="bold" />
+
+        <ProgressBar
+            android:id="@+id/pb_right"
+            style="@style/mProgressBarStyle"
+            android:layout_width="@dimen/dp_83"
+            android:layout_height="@dimen/dp_17"
+            android:layout_below="@id/tv_right_title_2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:max="100"
+            android:progress="0"
+            android:progressDrawable="@drawable/bg_progress_gold_left" />
+
+        <TextView
+            android:id="@+id/tv_right_count"
+            android:layout_width="@dimen/dp_83"
+            android:layout_height="@dimen/dp_17"
+            android:layout_below="@id/tv_right_title_2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:gravity="center"
+            android:text="0/10千万"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/line_right_1"
+            android:layout_width="@dimen/dp_19"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/pb_right"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_19"
+            android:textColor="@color/color_FDA826" />
+
+        <TextView
+            android:id="@+id/tv_my_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/pb_right"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:text="我的投入"
+            android:textColor="@color/color_9A9A9A"
+            android:textSize="@dimen/sp_9"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/line_right_2"
+            android:layout_width="@dimen/dp_19"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/pb_right"
+            android:layout_marginLeft="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_19"
+            android:layout_toRightOf="@id/tv_my_right"
+            android:textColor="@color/color_FDA826" />
+
+
+        <TextView
+            android:id="@+id/tv_right_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_my_right"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_6"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/color_009CF0"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_game_center"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_167"
+        android:layout_below="@id/ll_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_7">
+
+        <TextView
+            android:layout_width="@dimen/dp_31"
+            android:layout_height="31dp"
+            android:gravity="center"
+            android:text="30"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_21"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_toals"
+            android:layout_width="@dimen/dp_144"
+            android:layout_height="@dimen/dp_19"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginBottom="@dimen/dp_9"
+            android:background="@drawable/bg_gold_game_time_round"
+            android:gravity="center"
+            android:text="开奖前3秒锁定投入"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <cn.iwgang.countdownview.CountdownView
+            android:id="@+id/tv_game_time"
+            android:layout_width="@dimen/dp_31"
+            android:layout_height="@dimen/dp_31"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_gold_game_time_round"
+            android:gravity="center"
+            app:isShowDay="false"
+            app:isShowHour="false"
+            app:isShowMillisecond="false"
+            app:isShowMinute="false"
+            app:isShowSecond="true"
+            app:suffixGravity="center"
+            app:suffixLRMargin="1.0sp"
+            app:suffixTextColor="@color/white"
+            app:suffixTextSize="@dimen/sp_21"
+            app:timeTextColor="@color/white"
+            app:timeTextSize="@dimen/sp_21" />
+
+        <ImageView
+            android:id="@+id/iv_center"
+            android:layout_width="@dimen/dp_87"
+            android:layout_height="@dimen/dp_87"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_47"
+            android:scaleType="fitXY"
+            android:src="@mipmap/icon_game_gold_positive_select"
+            android:visibility="visible" />
+
+        <com.opensource.svgaplayer.SVGAImageView
+            android:id="@+id/svga"
+            android:layout_width="@dimen/dp_87"
+            android:layout_height="@dimen/dp_87"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_47"
+            android:scaleType="fitCenter"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_title_center"
+            android:layout_width="@dimen/dp_144"
+            android:layout_height="@dimen/dp_19"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/dp_9"
+            android:background="@drawable/bg_gold_game_time_round"
+            android:gravity="center"
+            android:text="开奖前3秒锁定投入"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+    </RelativeLayout>
+
+
+    <com.opensource.svgaplayer.SVGAImageView
+        android:id="@+id/left_svga"
+        android:layout_width="@dimen/dp_114"
+        android:layout_height="@dimen/dp_114"
+        android:layout_below="@id/ll_1"
+        android:layout_marginLeft="@dimen/dp_7"
+        android:layout_marginTop="@dimen/dp_43"
+        android:scaleType="fitCenter"
+        android:visibility="gone" />
+
+
+    <com.opensource.svgaplayer.SVGAImageView
+        android:id="@+id/right_svga"
+        android:layout_width="@dimen/dp_114"
+        android:layout_height="@dimen/dp_114"
+        android:layout_below="@id/ll_1"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp_43"
+        android:layout_marginRight="@dimen/dp_7"
+        android:scaleType="fitCenter"
+        android:visibility="gone" />
+
+</RelativeLayout>

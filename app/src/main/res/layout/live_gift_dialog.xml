@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_live_room_gift">
+
+    <TextView
+        android:id="@+id/tv_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_below="@id/tv_desc"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="LV 22"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12" />
+
+    <ProgressBar
+        android:id="@+id/pb_progressbar"
+        style="@style/mProgressBarStyle"
+        android:layout_width="@dimen/dp_225"
+        android:layout_below="@id/tv_desc"
+        android:layout_marginTop="@dimen/dp_7"
+        android:layout_height="@dimen/dp_3"
+        android:layout_marginLeft="@dimen/dp_6"
+        android:layout_toLeftOf="@id/tv_experience"
+        android:layout_toRightOf="@id/tv_level"
+        android:max="100"
+        android:progress="50"
+        android:progressDrawable="@drawable/bg_progress_live_gift" />
+
+    <TextView
+        android:id="@+id/tv_experience"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_desc"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_15"
+        android:text="需42376升级"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_12" />
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_20"
+        android:paddingLeft="@dimen/dp_10"
+        android:paddingRight="@dimen/dp_15"
+        android:background="@color/color_662b2b2b"
+        android:gravity="center_vertical"
+        android:text="对方可得700金钻、300热度"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/giftTab"
+        android:orientation="horizontal"
+        android:background="@drawable/shape_gift_tab"
+        android:layout_below="@id/tv_experience"
+        android:layout_height="@dimen/dp_40">
+
+        <TextView
+            android:layout_width="@dimen/dp_50"
+            android:background="#D83FDD"
+            android:text="热门"
+            android:gravity="center"
+            android:id="@+id/hotTab"
+            android:textStyle="bold"
+            android:textColor="@color/c_FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/dp_7"
+            android:layout_height="match_parent"/>
+
+        <TextView
+            android:layout_width="@dimen/dp_50"
+            android:background="#0000"
+            android:text="免费"
+            android:id="@+id/freeTab"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/c_FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_height="match_parent"/>
+
+
+        <TextView
+            android:layout_width="@dimen/dp_50"
+            android:background="#0000"
+            android:text="背包"
+            android:id="@+id/backpackTab"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textColor="@color/c_FFFFFF"
+            android:textSize="14sp"
+            android:layout_marginStart="@dimen/dp_5"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <com.jk.jkproject.ui.widget.DialogViewPager
+        android:id="@+id/live_gift_vp"
+        android:layout_width="fill_parent"
+        android:paddingTop="@dimen/dp_2"
+        android:layout_height="@dimen/dp_235"
+        android:layout_below="@id/giftTab" />
+
+    <RelativeLayout
+        android:id="@+id/rl_1"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_47"
+        android:layout_below="@id/live_gift_vp"
+        android:background="@color/color_2b2b2b"
+        android:paddingRight="@dimen/dp_12">
+
+        <TextView
+            android:id="@+id/tv_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:drawableRight="@mipmap/live_icon_live_room_gift_return"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center"
+            android:text="0.00"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_gift_num"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_toLeftOf="@id/tv_ok_btn"
+            android:drawableRight="@mipmap/live_icon_live_room_gift_num_up"
+            android:drawablePadding="@dimen/dp_5"
+            android:gravity="center"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_ok_btn"
+            android:layout_width="@dimen/dp_65"
+            android:layout_height="@dimen/dp_30"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/bg_red_live_room_gift_btn"
+            android:gravity="center"
+            android:text="赠送"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relate_quick_send_gift"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/rl_1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_14"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:visibility="gone">
+
+        <com.jk.jkproject.ui.widget.room.RoundCircleProgressBar
+            android:id="@+id/progress_count"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_100"
+            android:layout_centerInParent="true"
+            fresco:layout_constraintHorizontal_chainStyle="spread"
+            fresco:progress_background_color="@color/transparent"
+            fresco:progress_end_color="@color/color_end_circle"
+            fresco:progress_start_color="@color/color_start_circle"
+            fresco:progress_stroke_width="@dimen/dp_10"
+            fresco:progress_textColor="@color/white"
+            fresco:progress_textSize="@dimen/sp_12"
+            fresco:style="solid_line" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_gift_circle"
+            android:layout_width="@dimen/dp_84"
+            android:layout_height="@dimen/dp_84"
+            android:layout_centerInParent="true"
+            android:paddingBottom="@dimen/dp_3"
+            android:scaleType="fitXY"
+            android:visibility="visible"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            fresco:placeholderImage="@mipmap/live_icon_live_room_gift_circle"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="true" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_25"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/tv_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="连送"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_24" />
+
+            <TextView
+                android:id="@+id/tv_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_1"
+                android:layout_centerHorizontal="true"
+                android:text="30"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_16" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/live_gift_give_num"
+        android:layout_width="@dimen/dp_130"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@id/live_gift_vp"
+        android:layout_alignBottom="@id/live_gift_vp"
+        android:paddingLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_38"
+        android:layout_marginBottom="@dimen/dp_12"
+        android:background="@drawable/bg_live_room_gift_num"
+        android:visibility="gone" />
+</RelativeLayout>

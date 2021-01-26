@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_301"
+    android:layout_height="@dimen/dp_145"
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+    android:background="@drawable/bg_white_balance">
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:gravity="center"
+        android:maxLines="2"
+        android:text="您的账号在其他设备登录了，请\n重新登录~"
+        android:textColor="@color/color_333"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold" />
+
+    <include
+        layout="@layout/line"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_below="@id/tv_1"
+        android:layout_marginTop="@dimen/dp_21" />
+
+
+    <TextView
+        android:id="@+id/tv_top_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:gravity="center"
+        android:text="立即充值"
+        android:textColor="@color/color_0390FC"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold" />
+</RelativeLayout>

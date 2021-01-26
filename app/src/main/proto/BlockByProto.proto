@@ -1,0 +1,14 @@
+syntax = "proto3";
+package proto;
+import "Entity.proto";
+option java_package = "com.sencorsta.ids.common.proto";
+
+message BlockByProtoReq {
+  string tagId = 1;//被拉黑的用户id
+  string roomId = 2;//拉黑房间
+}
+
+message BlockByProtoRes {
+  ReturnMsg msg=1;
+}
+

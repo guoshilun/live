@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_F1F5F8">
+
+    <include layout="@layout/titlebar_title_layout" />
+
+    <RelativeLayout
+        android:id="@+id/ll_editor_init"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_198"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_60"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:background="@drawable/bg_white_round_btn">
+
+
+        <EditText
+            android:id="@+id/et_int"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@null"
+            android:gravity="fill_horizontal"
+            android:hint="请输入您想要回复的内容"
+            android:maxLength="200"
+            android:textColor="@color/color_333"
+            android:textColorHint="@color/color_999"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_count"
+            android:layout_width="wrap_content"
+            android:layout_height="18.0dip"
+            android:layout_alignRight="@id/et_int"
+            android:layout_alignBottom="@id/et_int"
+            android:layout_marginTop="@dimen/dp_16"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:text="0/200字"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_13" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_editor_init"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="输入内容并保存后自动会开启"
+        android:textColor="@color/color_999"
+        android:textSize="@dimen/sp_14" />
+
+</RelativeLayout>

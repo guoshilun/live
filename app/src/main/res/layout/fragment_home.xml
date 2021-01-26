@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:id="@+id/live_main_top_title"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/padding_size_44"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tab_rv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:orientation="horizontal" />
+
+        <ImageView
+            android:id="@+id/live_top_search"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_15"
+            android:scaleType="centerInside"
+            android:src="@drawable/icon_search" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/live_img_red_dot"
+        android:layout_width="7.0dip"
+        android:layout_height="7.0dip"
+        android:layout_marginLeft="60.0dip"
+        android:layout_marginTop="12.0dip"
+        android:background="@drawable/backpack_bg"
+        android:paddingBottom="10.0dip"
+        android:scaleType="centerInside"
+        android:visibility="gone" />
+
+    <com.jk.jkproject.ui.widget.CatonViewPager
+        android:id="@+id/live_vp_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/live_main_top_title" />
+</RelativeLayout>

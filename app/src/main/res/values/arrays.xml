@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="cpb_colors">
+        <item>@color/app_red_color</item>
+    </array>
+    <array name="refresh_progress_bar_colors">
+        <item>@color/progress_bar_color</item>
+    </array>
+</resources>

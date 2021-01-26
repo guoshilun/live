@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_wheat_or_pk"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_wheat"
+        android:layout_width="@dimen/dp_108"
+        android:layout_height="@dimen/dp_190"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_85"
+        android:visibility="gone">
+
+        <TextureView
+            android:id="@+id/surfaceview"
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="@dimen/dp_177"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dp_8" />
+
+        <ImageView
+            android:id="@+id/iv_wheat_close"
+            android:layout_width="@dimen/dp_26"
+            android:layout_height="@dimen/dp_26"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/icon_wheat_close" />
+    </RelativeLayout>
+
+</RelativeLayout>

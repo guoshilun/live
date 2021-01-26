@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/dp_10"
+    android:paddingBottom="@dimen/dp_12">
+
+    <include
+        android:id="@+id/team"
+        layout="@layout/team_members_management"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_48"
+        android:layout_below="@id/team"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:orientation="horizontal">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_left_header"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:scaleType="fitXY"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            fresco:placeholderImage="@mipmap/app_default_middle"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="true" />
+
+        <TextView
+            android:id="@+id/tv_team_nikeName"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLength="6"
+            android:text="@string/action_sign_in"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_team_identity"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:maxLength="3"
+            android:text="@string/action_sign_in"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_12" />
+
+        <ImageView
+            android:id="@+id/tv_team_operation"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="center"
+            android:layout_weight="1.0"
+            android:src="@mipmap/icon_team_opation" />
+    </LinearLayout>
+
+    <include
+        layout="@layout/line"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_2"
+        android:layout_below="@id/ll" />
+
+    <ImageView
+        android:id="@+id/iv_operation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp_65"
+        android:src="@mipmap/icon_team_option_not_select"
+        android:visibility="gone" />
+</RelativeLayout>

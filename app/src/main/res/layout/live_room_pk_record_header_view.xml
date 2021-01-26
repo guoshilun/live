@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_110">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_session"
+                android:layout_width="@dimen/dp_57"
+                android:layout_height="@dimen/dp_57"
+                android:background="@drawable/bg_pk_record_1"
+                android:gravity="center"
+                android:text="1188"
+                android:textColor="@color/color_646464"
+                android:textSize="@dimen/sp_17" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center"
+                android:text="总场次"
+                android:textColor="@color/color_646464"
+                android:textSize="@dimen/sp_13"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_win_count"
+                android:layout_width="@dimen/dp_57"
+                android:layout_height="@dimen/dp_57"
+                android:background="@drawable/bg_pk_record_2"
+                android:gravity="center"
+                android:text="1188"
+                android:textColor="@color/color_646464"
+                android:textSize="@dimen/sp_17" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center"
+                android:text="最大连胜次数"
+                android:textColor="@color/color_646464"
+                android:textSize="@dimen/sp_13"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="@dimen/dp_57"
+                android:layout_height="@dimen/dp_57"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/bg_pk_record_3"
+                android:gravity="center"
+                android:textColor="@color/color_646464"
+                android:textSize="@dimen/sp_17" />
+
+            <ImageView
+                android:layout_width="@dimen/dp_31"
+                android:layout_height="@dimen/dp_23"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/dp_14"
+                android:layout_marginTop="@dimen/dp_17"
+                android:src="@mipmap/icon_pk_earnings" />
+
+            <TextView
+                android:id="@+id/tv_earnings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_23"
+                android:gravity="center"
+                android:text="888888888"
+                android:textColor="@color/color_646464"
+                android:textSize="@dimen/sp_17" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_earnings"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_10"
+                android:gravity="center"
+                android:text="PK总收益"
+                android:textColor="@color/color_646464"
+                android:textSize="@dimen/sp_13"
+                android:textStyle="bold" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

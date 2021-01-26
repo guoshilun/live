@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.jk.order">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <application
+        android:maxAspectRatio="2.4"
+        android:requestLegacyExternalStorage="true">
+        <activity
+            android:name=".OrderListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderConfirmActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderCancelActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderRefundActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TakeOrderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TakeOrderStep1Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TakeOrderStep2Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TakeOrderStep3Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TakeOrderStep4Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TakeOrderModifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TakeOrderSetPriceActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".TakeOrderPowerModifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".InfoModifyActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AllGameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RejectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RejectDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AppealActivity"
+            android:screenOrientation="portrait" />
+
+
+        <meta-data
+            android:name="design_width_in_dp"
+            android:value="375" />
+        <meta-data
+            android:name="design_height_in_dp"
+            android:value="100000" />
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" />
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+    </application>
+</manifest>

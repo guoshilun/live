@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bean"
+            type="com.fansan.common.pojo.OrderPushBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        drawable_radiusLB="@{8}"
+        drawable_radiusRB="@{8}"
+        drawable_solidColor="@{@color/c_FFFFFF}"
+        android:layout_width="match_parent"
+        android:paddingTop="20dp"
+        android:layout_height="132dp">
+
+        <TextView
+            android:id="@+id/gameName"
+            android:text="@{bean.gameName}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/c_666666"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="王者荣耀" />
+
+        <TextView
+            android:id="@+id/unit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:textColor="@color/c_969696"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:text='@{bean.unit + "x" + String.valueOf(bean.count)}'
+            app:layout_constraintBaseline_toBaselineOf="@id/gameName"
+            app:layout_constraintStart_toEndOf="@id/gameName"
+            app:layout_constraintTop_toTopOf="@id/gameName"
+            tools:text="一小时x2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="70dp"
+            android:text="预计收入："
+            android:id="@+id/priceLabel"
+            android:textColor="@color/c_969696"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/unit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/unit" />
+
+        <com.fansan.common.DrawableTextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:textColor="#F09B00"
+            android:text="@{bean.amount}"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/unit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/unit"
+            app:leftDrawable="@drawable/me_diamon_yellow"
+            app:leftDrawableHeight="12dp"
+            app:leftDrawableWidth="16dp"
+            tools:text="2000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/gameName"
+            android:layout_marginTop="15dp"
+            android:text="@{bean.msg}"
+            app:layout_constraintStart_toStartOf="@id/gameName"
+            android:textSize="12sp"
+            tools:text="hahahahahhahaha"
+            android:id="@+id/content"
+            android:textColor="@color/c_969696"/>
+
+        <TextView
+            drawable_solidColor="@{@color/c_FF5B99}"
+            drawable_radius="@{10}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="18dp"
+            android:textColor="@color/c_FFFFFF"
+            android:id="@+id/rightBtn"
+            tools:text="查看订单"
+            android:gravity="center"
+            android:textSize="10sp"
+            tools:background="@color/c_FF5B99"
+            android:layout_width="50dp"
+            android:layout_height="20dp"/>
+
+
+        <TextView
+            drawable_solidColor="@{@color/c_FFFFFF}"
+            drawable_strokeColor="@{@color/c_FF5B99}"
+            drawable_strokeWidth="@{1}"
+            drawable_radius="@{10}"
+            app:layout_constraintEnd_toStartOf="@id/rightBtn"
+            app:layout_constraintTop_toTopOf="@id/rightBtn"
+            app:layout_constraintBottom_toBottomOf="@id/rightBtn"
+            android:textColor="@color/c_FF5B99"
+            android:id="@+id/leftBtn"
+            android:layout_marginEnd="30dp"
+            android:text="拒绝"
+            android:gravity="center"
+            android:textSize="10sp"
+            tools:background="@color/c_FFFFFF"
+            android:layout_width="50dp"
+            android:layout_height="20dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

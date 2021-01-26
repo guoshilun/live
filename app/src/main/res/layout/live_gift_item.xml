@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/live_gift_item_ll"
+    android:layout_width="@dimen/dp_90"
+    android:layout_height="@dimen/dp_109"
+    android:layout_centerInParent="true"
+    android:background="@drawable/bg_red_gift_boder"
+    android:clickable="true"
+    android:orientation="vertical">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/live_gift_item_iv"
+        android:layout_width="@dimen/dp_54"
+        android:layout_height="@dimen/dp_54"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_18"
+        app:actualImageScaleType="centerCrop"
+        app:placeholderImage="@mipmap/app_default_middle"
+        app:placeholderImageScaleType="centerCrop" />
+
+    <ImageView
+        android:id="@+id/iv_live_gift_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:scaleType="fitXY"
+        android:src="@mipmap/live_icon_gift_type_1" />
+
+    <ImageView
+        android:id="@+id/live_gift_item_hit"
+        android:layout_width="@dimen/dp_53"
+        android:layout_marginTop="@dimen/dp_18"
+        android:layout_height="@dimen/dp_53"
+        android:layout_centerHorizontal="true"
+         />
+
+    <TextView
+        android:id="@+id/count"
+        android:layout_width="@dimen/dp_53"
+        android:layout_centerHorizontal="true"
+        android:background="#5B27D1"
+        android:textSize="@dimen/sp_8"
+        android:textColor="@color/c_FFFFFF"
+        android:gravity="center"
+        tools:text="X10"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/dp_62"
+        android:layout_height="@dimen/dp_10"/>
+
+    <TextView
+        android:id="@+id/expire"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:paddingStart="@dimen/dp_3"
+        android:paddingEnd="@dimen/dp_3"
+        android:layout_marginStart="@dimen/dp_3"
+        android:layout_marginTop="@dimen/dp_3"
+        android:textSize="@dimen/sp_7"
+        android:textColor="@color/c_FFFFFF"
+        android:gravity="center"
+        tools:text="100天"
+        android:background="@drawable/expire_time_shape"
+        android:layout_height="@dimen/dp_11"/>
+
+    <LinearLayout
+        android:id="@+id/linear_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/live_gift_item_iv"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/live_gift_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dp_3"
+            android:gravity="center"
+            android:text="礼物名称"
+            android:textColor="@color/color_FC5E8E"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/live_gift_item_amond_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:gravity="center"
+            android:text="100"
+            android:textColor="@color/color_FC5E8E"
+            android:textSize="@dimen/sp_10" />
+    </LinearLayout>
+</RelativeLayout>

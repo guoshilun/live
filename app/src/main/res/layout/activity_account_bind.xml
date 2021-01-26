@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include layout="@layout/titlebar_title_layout" />
+
+    <com.jk.jkproject.ui.widget.DrawerItemView
+        android:id="@+id/div_num_binding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_67" />
+
+
+    <com.jk.jkproject.ui.widget.DrawerItemView
+        android:id="@+id/div_wx_binding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/div_num_binding" />
+
+
+    <com.jk.jkproject.ui.widget.DrawerItemView
+        android:id="@+id/div_qq_binding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/div_wx_binding" />
+</RelativeLayout>

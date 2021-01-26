@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jk.jkproject.ui.widget.SuperEditText xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/dp_60">
+
+    <TextView
+        android:id="@+id/super_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="10.0sp"
+        android:visibility="visible" />
+
+    <EditText
+        android:id="@+id/super_edittext"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/blackColor"
+        android:textColorHint="@color/color_999"
+        android:textSize="@dimen/sp_18" />
+
+    <FrameLayout
+        android:id="@+id/super_head_frame"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="2.0px"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/super_head"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerVertical="true"
+            android:paddingLeft="@dimen/dp_5"
+            android:paddingRight="@dimen/dp_12"
+            android:text="+86"
+            android:textColor="@color/blackColor"
+            android:textSize="@dimen/sp_16"
+            android:visibility="visible" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
+
+        <ImageButton
+            android:id="@+id/super_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:background="@mipmap/icon_password_clear"
+            android:scaleType="centerCrop"
+            android:visibility="invisible" />
+
+        <ImageView
+            android:id="@+id/super_head_icon"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginRight="@dimen/dp_5"
+            android:layout_toRightOf="@id/super_delete"
+            android:scaleType="centerInside"
+            android:src="@mipmap/icon_password_hint"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/super_toast_msg"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/super_edittext"
+        android:layout_marginTop="2.0dip"
+        android:textColor="@color/white"
+        android:textSize="10.0sp"
+        android:visibility="gone" />
+</com.jk.jkproject.ui.widget.SuperEditText>

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/transparent">
+
+    <com.jk.jkproject.ui.widget.room.KeyboardListenRelativeLayout
+        android:id="@+id/live_room_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/transparent">
+
+        <RelativeLayout
+            android:id="@+id/live_room_top"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/live_room_anchorinfo"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dp_44"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_15"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.jk.jkproject.ui.widget.room.LiveViewWithIcon
+                    android:id="@+id/view_anchor_info"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dp_15"
+                    android:layout_marginBottom="@dimen/dp_4" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_online_users"
+                    android:layout_width="0.0px"
+                    android:layout_height="@dimen/dp_33"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1.0" />
+
+                <TextView
+                    android:id="@+id/tv_load_count"
+                    android:layout_width="@dimen/dp_33"
+                    android:layout_height="@dimen/dp_33"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:background="@drawable/bg_live_room_count_gray"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_live_charisma"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/live_room_anchorinfo"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginTop="@dimen/dp_6">
+
+                <TextView
+                    android:id="@+id/tv_charisma"
+                    android:layout_width="@dimen/dp_90"
+                    android:layout_height="@dimen/dp_19"
+                    android:background="@drawable/bg_live_room_red"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12" />
+
+                <LinearLayout
+                    android:id="@+id/live_gift_ticket_ll"
+                    android:layout_width="@dimen/dp_77"
+                    android:layout_height="@dimen/dp_25"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:background="@drawable/bg_width_count_down"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_5">
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_16"
+                        android:layout_height="@dimen/dp_16"
+                        android:src="@mipmap/live_room_open_time" />
+
+                    <TextView
+                        android:id="@+id/tv_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/dp_3"
+                        android:text="00:00:00"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_12" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+
+        <com.jk.jkproject.ui.widget.room.OnScrollRecyclerView
+            android:id="@+id/rl_live_room_chatlist"
+            android:layout_width="@dimen/dp_240"
+            android:layout_height="@dimen/dp_188"
+            android:layout_above="@id/ll_live_room_bottom_func_emo"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_6"
+            android:cacheColorHint="@color/transparent"
+            android:divider="@null"
+            android:listSelector="@color/transparent"
+            android:scrollbars="none" />
+
+        <include
+            layout="@layout/live_room_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_alignParentBottom="true" />
+
+        <View
+            android:id="@+id/view_goto_room"
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:visibility="gone" />
+
+
+
+        <com.jk.jkproject.ui.widget.room.LiveViewForGift
+            android:id="@+id/view_gift_combo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginBottom="240.0dip"
+            android:visibility="invisible" />
+
+        <com.jk.jkproject.ui.widget.room.LiveViewForGift
+            android:id="@+id/view_gift_combo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginBottom="80.0dip"
+            android:visibility="invisible" />
+
+        <RelativeLayout
+            android:id="@+id/relative_root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/rl_live_room_chatlist"
+            android:layout_marginTop="@dimen/dp_90"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:background="@color/transparent">
+
+            <ViewStub
+                android:id="@+id/layout_stytem_ann"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout="@layout/layout_announcement" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_350"
+                android:layout_below="@id/layout_stytem_ann">
+
+                <com.miliyo.danmaku.DanMuParentView
+                    android:id="@+id/dpv_middle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.miliyo.danmaku.DanMuView
+                        android:id="@+id/danmaku_middle"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </com.miliyo.danmaku.DanMuParentView>
+            </LinearLayout>
+
+
+<!--            <ViewStub-->
+<!--                android:id="@+id/layout_enter_room"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:layout="@layout/layout_enter_room"-->
+<!--                android:paddingRight="@dimen/dp_11" />-->
+        </RelativeLayout>
+
+        <com.jk.jkproject.ui.widget.room.SeekBarRelatelayout
+            android:id="@+id/relate_pk_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:visibility="gone" />
+
+        <com.jk.jkproject.ui.widget.room.PkCountdownView
+            android:id="@+id/relate_pk_countdown"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone" />
+
+        <com.jk.jkproject.ui.widget.room.PkStartAnimation
+            android:id="@+id/relate_pk_animation"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:visibility="gone" />
+
+        <com.jk.jkproject.ui.widget.room.PkSmallAnimation
+            android:id="@+id/relate_pk_small_animation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+
+        <com.jk.jkproject.ui.widget.room.RollPagerView
+            android:id="@+id/task_viewpager"
+            android:layout_width="65.0dip"
+            android:layout_height="75.0dip"
+            android:layout_below="@id/task_viewpager1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_5"
+            android:visibility="gone"
+            fresco:rollviewpager_play_delay="5000" />
+
+        <com.jk.jkproject.ui.widget.room.RollPagerView
+            android:id="@+id/task_viewpager1"
+            android:layout_width="65.0dip"
+            android:layout_height="75.0dip"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_100"
+            android:layout_marginRight="@dimen/dp_5"
+            android:visibility="gone"
+            fresco:rollviewpager_play_delay="5000" />
+
+        <com.jk.jkproject.ui.widget.room.SeekBarClickRelatelayout
+            android:id="@+id/seekclick"
+            android:layout_width="fill_parent"
+            android:layout_height="30.0dip"
+            android:visibility="gone"
+            android:layout_centerVertical="true" />
+
+        <LinearLayout
+            android:id="@+id/ll_live_room_bottom_func_emo"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_45"
+            android:layout_alignParentBottom="true"
+            android:background="@color/transparent"
+            android:orientation="vertical">
+
+            <include
+                layout="@layout/live_room_chat"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dp_44"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/ll_live_room_emo"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dp_200"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <FrameLayout
+                    android:id="@+id/fl_emo_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+<!--        <ViewStub-->
+<!--            android:id="@+id/layout_svga_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout="@layout/layout_gift_svga" />-->
+
+        <ViewStub
+            android:id="@+id/layout_enter_room"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/rl_live_room_chatlist"
+            android:gravity="center_vertical"
+            android:layout="@layout/layout_enter_room"
+            android:paddingRight="@dimen/dp_11" />
+
+        <TextView
+            android:id="@+id/tv_wheat"
+            android:layout_width="@dimen/dp_101"
+            android:layout_height="@dimen/dp_33"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_46"
+            android:background="@drawable/bg_wheat_btn"
+            android:drawableLeft="@mipmap/icon_wheat"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_10"
+            android:text="申请连麦"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_15"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_wheat_time"
+            android:layout_width="@dimen/dp_101"
+            android:layout_height="@dimen/dp_33"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_46"
+            android:background="@drawable/bg_wheat_btn"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_wheat_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_12"
+                android:text="申请中  "
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_15" />
+
+            <cn.iwgang.countdownview.CountdownView
+                android:id="@+id/cv_wheat_time"
+                android:layout_width="@dimen/dp_51"
+                android:layout_height="@dimen/dp_33"
+                android:visibility="gone"
+                app:isShowDay="false"
+                app:isShowHour="false"
+                app:isShowMillisecond="false"
+                app:isShowMinute="false"
+                app:isShowSecond="true"
+                app:suffixGravity="center"
+                app:suffixLRMargin="1sp"
+                app:suffixTextColor="@color/white"
+                app:suffixTextSize="@dimen/sp_15"
+                app:timeTextColor="@color/white"
+                app:timeTextSize="@dimen/sp_15" />
+        </LinearLayout>
+    </com.jk.jkproject.ui.widget.room.KeyboardListenRelativeLayout>
+</RelativeLayout>

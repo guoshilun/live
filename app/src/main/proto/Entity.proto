@@ -1,0 +1,40 @@
+// See README.txt for information and build instructions.
+//
+// Note: START and END tags are used in comments to define sections used in
+// tutorials.  They are not part of the syntax for Protocol Buffers.
+//
+// To get an in-depth walkthrough of this file and the related examples, see:
+// https://developers.google.com/protocol-buffers/docs/tutorials
+
+// [START declaration]
+syntax = "proto3";
+package proto;
+
+// [END declaration]
+
+// [START java_declaration]
+option java_package = "com.sencorsta.ids.common.proto";
+//option java_outer_classname = "Test";
+// [END java_declaration]
+
+// [START csharp_declaration]
+//option csharp_namespace = "com.sencorsta.LoginByProto";
+// [END csharp_declaration]
+
+// [START messages]
+
+message ReturnMsg {
+  int32  code = 1;
+  string msg = 2;
+}
+
+//用户详情信息
+message UserinfoMsg {
+  string userId = 1;//目标用户id
+  string nickname=2;//目标用户昵称
+  string portrait=3;//目标用户头像
+  int32 sex=4;//目标用户性别
+  int32 state = 5;//目标用户状态  判断是否是好友
+}
+
+// [END messages]

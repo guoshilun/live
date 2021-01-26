@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="c_FFFFFF">#ffffff</color>
+    <color name="c_0000">#0000</color>
+    <color name="c_E60033">#E60033</color>
+    <color name="c_333333">#333333</color>
+    <color name="c_FFA723">#FFA723</color>
+    <color name="c_009BEF">#009BEF</color>
+    <color name="c_FF5B99">#FF5B99</color>
+    <color name="c_666666">#666666</color>
+    <color name="c_F36E2D">#F36E2D</color>
+    <color name="c_cccccc">#CCCCCC</color>
+    <color name="c_EA00FF">#EA00FF</color>
+    <color name="c_7679FF">#7679FF</color>
+    <color name="c_F0F0F0">#F0F0F0</color>
+    <color name="c_FF9E16">#FF9E16</color>
+    <color name="c_0390FC">#0390FC</color>
+    <color name="c_F08BE8">#F08BE8</color>
+    <color name="c_D53FDC">#D53FDC</color>
+    <color name="c_E7E7E7">#E7E7E7</color>
+    <color name="c_969696">#969696</color>
+    <color name="c_C26DED">#C26DED</color>
+    <color name="c_a1cafc">#a1cafc</color>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <com.jk.jkproject.ui.widget.room.AutoScrollViewPager
+        android:id="@+id/live_vp_pager"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_120" />
+
+    <com.jk.jkproject.ui.widget.CircleIndicator
+        android:id="@+id/live_viewpager_tab"
+        android:layout_width="wrap_content"
+        android:layout_height="20.0dip"
+        android:layout_alignBottom="@id/live_vp_pager"
+        android:layout_centerHorizontal="true"
+        android:background="@color/transparent"
+        app:ci_gravity="center"
+        app:ci_margin="5.0dip"
+        app:ci_mode="solo"
+        app:ci_radius="3.0dip"
+        app:ci_selected_background="@color/divider_red" />
+</RelativeLayout>

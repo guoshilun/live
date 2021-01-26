@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_259"
+    android:background="@drawable/bg_wheat_dialog_round_white">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_46"
+        android:background="@mipmap/icon_wheat_dialog_top"
+        android:gravity="center"
+        android:text="邀请失败"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_17"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_59"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_header"
+            android:layout_width="@dimen/dp_63"
+            android:layout_height="@dimen/dp_63"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitXY"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            fresco:placeholderImage="@mipmap/app_default_middle"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="true" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/sp_10"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:maxLines="1"
+            android:layout_gravity="center_horizontal"
+            android:text="JK账号:12345678"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_8" />
+
+        <TextView
+            android:id="@+id/tv_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_11"
+            android:gravity="center_horizontal"
+            android:text="拒绝了你的PK邀请"
+            android:textColor="@color/color_FF5959"
+            android:textSize="@dimen/sp_10"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_other_invitation"
+        android:layout_width="@dimen/dp_101"
+        android:layout_height="@dimen/dp_42"
+        android:layout_below="@id/ll_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dp_99"
+        android:layout_marginTop="@dimen/dp_23"
+        android:background="@drawable/bg_pk_other_invitation"
+        android:gravity="center"
+        android:text="邀请其他好友"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_13"
+        android:textStyle="bold" />
+</RelativeLayout>

@@ -1,0 +1,61 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+apply from:'info.gradle'
+buildscript {
+    
+    ext {
+        kotlin_version = '1.4.10'
+    }
+    repositories {
+//        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+//        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
+        maven {url "http://mvn.mob.com/android"}
+        google()
+        jcenter()
+        maven {
+            url  "http://dl.bintray.com/lukaville/maven"
+        }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.10'
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.8'
+        // 注册MobSDK 2018.0319.1724
+        classpath "com.mob.sdk:MobSDK:+"
+        classpath 'com.blankj:bus-gradle-plugin:2.6'
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+//        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+//        maven { url "http://maven.aliyun.com/nexus/content/repositories/jcenter/" }
+        maven {url "http://mvn.mob.com/android"}
+        maven { url 'https://dl.bintray.com/hpdx/maven/' }
+        maven { url "https://jitpack.io" }
+        google()
+        jcenter()
+        maven {url  "http://dl.bintray.com/lukaville/maven"}
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    minSdk = 21
+    targetSdk = 26
+    buildToolsVersion = '26.0.3'
+    compileSdkVersion = 26
+    // Libraries
+    supportLibVersion = '26.0.0'
+    appcompat7Version = '26.0.0'
+    support4Version = '26.0.0'
+    recyclerviewVersion = '26.0.0'
+    cardview7Version = '26.0.0'
+    annotationsVersion = '26.0.0'
+
+
+}

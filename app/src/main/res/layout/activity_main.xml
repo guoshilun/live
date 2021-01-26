@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fl_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/main_linear" />
+
+    <TextView
+        android:id="@+id/main_linear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_49"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white" />
+
+
+    <ImageView
+        android:id="@+id/go_live_attention"
+        android:layout_width="@dimen/dp_59"
+        android:layout_height="@dimen/dp_59"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:scaleType="fitXY"
+        android:src="@mipmap/live_icon_home_tab_3" />
+
+    <com.opensource.svgaplayer.SVGAImageView
+        android:id="@+id/btnPlay"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:scaleType="fitCenter"
+        android:visibility="visible" />
+
+    <com.opensource.svgaplayer.SVGAImageView
+        android:id="@+id/right_svga"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:scaleType="fitCenter"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/playSelected"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@mipmap/icon_play"
+         />
+
+    <ImageView
+        android:id="@+id/iv_left_select"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/tab_play"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@mipmap/icon_live"
+        />
+
+    <ImageView
+        android:id="@+id/iv_right_select"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:src="@mipmap/icon_mine" />
+
+    <ImageView
+        android:id="@+id/msgSelected"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:layout_toLeftOf="@id/tab_match"
+        android:src="@mipmap/icon_msg" />
+
+    <com.jk.jkproject.ui.widget.MainBottomItem
+        android:id="@+id/tab_play"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_5" />
+
+    <com.jk.jkproject.ui.widget.MainBottomItem
+        android:id="@+id/tab_home"
+        android:layout_width="@dimen/dp_60"
+        android:layout_toRightOf="@id/tab_play"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_5" />
+
+
+    <com.jk.jkproject.ui.widget.MainBottomItem
+        android:id="@+id/tab_match"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_5" />
+
+    <com.jk.jkproject.ui.widget.MainBottomItem
+        android:id="@+id/tab_msg"
+        android:layout_width="@dimen/dp_60"
+        android:layout_toLeftOf="@id/tab_match"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_5" />
+
+    <com.opensource.svgaplayer.SVGAImageView
+        android:id="@+id/left_svga"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:layout_toEndOf="@id/tab_play"
+        android:layout_marginStart="@dimen/dp_20"
+        android:scaleType="fitCenter"
+        android:visibility="visible" />
+
+    <com.opensource.svgaplayer.SVGAImageView
+        android:id="@+id/btnMsg"
+        android:layout_width="@dimen/dp_60"
+        android:layout_height="@dimen/dp_60"
+        android:layout_toStartOf="@id/tab_match"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="@dimen/dp_20"
+        android:layout_marginBottom="@dimen/dp_18"
+        android:scaleType="fitCenter"
+        android:visibility="visible" />
+</RelativeLayout>

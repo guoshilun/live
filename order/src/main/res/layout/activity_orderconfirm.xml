@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="global"
+            type="com.fansan.common.GlobalAppViewModel" />
+
+        <variable
+            name="model"
+            type="com.jk.order.OrderViewModel" />
+
+        <variable
+            name="clickProxy"
+            type="com.jk.order.OrderConfirmActivity.ConfirmClickProxy" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_EEEEEE"
+        android:focusable="true"
+        android:focusableInTouchMode="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@color/c_FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:src="@drawable/back"
+                android:id="@+id/back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/c_666666" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="确认订单"
+                android:textColor="@color/c_666666"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/infoLayout"
+                drawable_radius="@{8}"
+                drawable_solidColor="@{@color/c_FFFFFF}"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/head"
+                    imageUrl="@{model.confirmOrderInfoBean.picture}"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="9dp"
+                    android:text="@{model.confirmOrderInfoBean.nickname}"
+                    android:textColor="@color/c_666666"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/gender"
+                    app:layout_constraintStart_toEndOf="@id/head"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="user" />
+
+                <ImageView
+                    android:id="@+id/gender"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:src="@{model.confirmOrderInfoBean.sex == 1? @drawable/me_male : @drawable/me_female}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/username"
+                    app:layout_constraintTop_toBottomOf="@id/username" />
+
+                <!---->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    drawable_radius="@{19}"
+                    drawable_solidColor="@{model.confirmOrderInfoBean.type == 1? @color/c_FFA723 : @color/c_0390FC}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:paddingStart="4dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="2dp"
+                    app:layout_constraintBottom_toBottomOf="@id/gender"
+                    app:layout_constraintStart_toEndOf="@id/gender"
+                    app:layout_constraintTop_toTopOf="@id/gender">
+
+                    <!---->
+                    <ImageView
+                        android:id="@+id/anchorIcon"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:src="@{model.confirmOrderInfoBean.type == 1 ? @drawable/icon_user_level : @drawable/anchor_level_icon}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <!---->
+                    <TextView
+                        android:id="@+id/level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="1dp"
+                        android:text="@{model.confirmOrderInfoBean.type == 1 ? String.valueOf(model.confirmOrderInfoBean.userGrade)  : String.valueOf(model.confirmOrderInfoBean.anchorGrade)}"
+                        android:textColor="@color/c_FFFFFF"
+                        android:textSize="9sp"
+                        app:layout_constraintBottom_toBottomOf="@id/anchorIcon"
+                        app:layout_constraintStart_toEndOf="@id/anchorIcon"
+                        app:layout_constraintTop_toTopOf="@id/anchorIcon" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="@{model.confirmOrderInfoBean.dan_name}"
+                    android:textColor="#F36E2D"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/orderLayout"
+                drawable_radius="@{8}"
+                drawable_solidColor="@{@color/c_FFFFFF}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/infoLayout">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:onClick="@{() -> clickProxy.chooseGame()}"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="选择游戏"
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:drawableEnd="@drawable/order_right_arrow"
+                        android:drawablePadding="10dp"
+                        android:text="@{model.confirmOrderInfoBean.name}"
+                        android:textColor="@color/c_999999"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="计费方式"
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.fansan.common.DrawableTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="15dp"
+                        android:drawablePadding="2dp"
+                        android:gravity="center"
+                        android:text='@{String.valueOf(model.confirmOrderInfoBean.price) + "/" + model.confirmOrderInfoBean.units}'
+                        android:textColor="@color/c_009BEF"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:leftDrawable="@drawable/diamond"
+                        app:leftDrawableHeight="9dp"
+                        app:leftDrawableWidth="12dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="下单数量"
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/rightArrow"
+                        android:layout_width="27dp"
+                        android:layout_height="31dp"
+                        android:layout_marginEnd="15dp"
+                        android:onClick="@{() -> clickProxy.plusOrder()}"
+                        android:padding="10dp"
+                        android:src="@drawable/order_right_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="40dp"
+                        android:text="@{String.valueOf(model.orderNum)}"
+                        android:textColor="@color/c_666666"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/rightArrow"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageView
+                        android:id="@+id/min"
+                        android:layout_width="27dp"
+                        android:layout_height="31dp"
+                        android:layout_marginEnd="40dp"
+                        android:onClick="@{() -> clickProxy.minOrder()}"
+                        android:padding="10dp"
+                        android:src="@drawable/left_arrow"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/count"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/c_EEEEEE" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <TextView
+                        android:id="@+id/orderPrice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="订单总价"
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/priceDimon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.fansan.common.DrawableTextView
+                        android:id="@+id/priceDimon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="2dp"
+                        android:gravity="center"
+                        android:text="@{String.valueOf(model.confirmOrderInfoBean.price * model.orderNum)}"
+                        android:textColor="@color/c_009BEF"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/orderPrice"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:leftDrawable="@drawable/diamond"
+                        app:leftDrawableHeight="9dp"
+                        app:leftDrawableWidth="12dp" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/noteLayout"
+                drawable_radius="@{8}"
+                drawable_solidColor="@{@color/c_FFFFFF}"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/orderLayout">
+
+
+                <com.fansan.common.PrefixEditTextView
+                    android:id="@+id/preFixEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="top|left"
+                    android:maxLength="53"
+                    android:padding="12dp"
+                    android:textColor="#666"
+                    android:textSize="12sp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:background="@color/c_FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+
+                <com.fansan.common.DrawableTextView
+                    android:id="@+id/allDimonPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:drawablePadding="2dp"
+                    android:gravity="center"
+                    android:text="@{String.valueOf(global.moneyData.component1())}"
+                    android:textColor="@color/c_009BEF"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:leftDrawable="@drawable/diamond"
+                    app:leftDrawableHeight="9dp"
+                    app:leftDrawableWidth="12dp" />
+
+                <TextView
+                    drawable_radius="@{6}"
+                    drawable_solidColor="@{@color/c_FF5B99}"
+                    android:layout_width="67dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="31dp"
+                    android:id="@+id/commit"
+                    android:gravity="center"
+                    android:textColor="@color/c_FFFFFF"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

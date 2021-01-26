@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="bean"
+            type="com.fansan.common.pojo.PlayUserListBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/c_FFFFFF">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/head"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            imageUrl="@{bean.picture}"
+            placeHolder="@{@drawable/icon_contribution_defult_bg}"
+            errorImg="@{@drawable/icon_contribution_defult_bg}"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/sample_head_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{bean.nickname}"
+            android:textColor="@color/c_666666"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/introduce"
+            app:layout_constraintStart_toEndOf="@id/head"
+            app:layout_constraintTop_toTopOf="@id/head" />
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="7dp"
+            android:src="@{bean.sex == 0? @drawable/me_female : @drawable/me_male}"
+            app:layout_constraintBottom_toBottomOf="@id/username"
+            app:layout_constraintStart_toEndOf="@id/username"
+            app:layout_constraintTop_toTopOf="@id/username" />
+
+        <TextView
+            android:id="@+id/introduce"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{bean.introduce}"
+            android:textColor="@color/c_969696"
+            android:textSize="10sp"
+            android:gravity="start"
+            tools:text="介绍介绍介绍介绍介绍介绍"
+            app:layout_constraintEnd_toStartOf="@id/recordLayout"
+            android:layout_marginEnd="10dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintBottom_toTopOf="@id/infoLayout"
+            app:layout_constraintStart_toStartOf="@id/username"
+            app:layout_constraintTop_toBottomOf="@id/username" />
+
+        <LinearLayout
+            android:id="@+id/infoLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@id/head"
+            app:layout_constraintStart_toStartOf="@id/username"
+            app:layout_constraintTop_toBottomOf="@id/introduce">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@{bean.name}"
+                android:textColor="@color/c_999999"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_weight="1"
+                android:text="@{bean.dan_name}"
+                android:textColor="@color/c_F36E2D"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <com.fansan.common.DrawableTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:drawablePadding="2dp"
+                android:gravity="center"
+                android:text='@{bean.order_price + "/" + bean.units}'
+                android:textColor="@color/c_009BEF"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:leftDrawable="@drawable/diamond"
+                app:leftDrawableHeight="9dp"
+                app:leftDrawableWidth="12dp" />
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/recordLayout"
+            drawable_radius="@{15}"
+            drawable_solidColor="@{@color/c_FFFFFF}"
+            drawable_strokeColor="@{@color/c_F08BE8}"
+            drawable_strokeWidth="@{1}"
+            android:layout_width="51dp"
+            android:layout_height="19dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/wave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:src="@drawable/recorder_wave"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/record"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:text='@{bean.video_duration + "S"}'
+                android:textColor="@color/c_F08BE8"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/wave"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@color/c_F0F0F0"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

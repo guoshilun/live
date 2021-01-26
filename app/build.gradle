@@ -1,0 +1,248 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.google.protobuf'
+apply plugin: "com.blankj.bus"
+apply from: '../config.gradle'
+android {
+
+    androidExtensions {
+        experimental = true
+    }
+
+    buildFeatures {
+        dataBinding = true
+        // viewBinding = true
+    }
+
+
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+    useLibrary 'org.apache.http.legacy'
+    signingConfigs {
+        release {
+            storeFile file("../keystore/jk.jks")
+            storePassword 'keystore123'
+            keyAlias 'keystore0'
+            keyPassword 'keystore123'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+
+        debug {
+            storeFile file("../keystore/jk.jks")
+            storePassword 'keystore123'
+            keyAlias 'keystore0'
+            keyPassword 'keystore123'
+            v1SigningEnabled true
+            v2SigningEnabled true
+        }
+    }
+    defaultConfig {
+        applicationId "com.jk.jkproject"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 8
+        versionName "1.0.8"
+        ndk {
+            abiFilters "armeabi-v7a", "arm64-v8a", 'x86'
+        }
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        flavorDimensions "default"
+        multiDexEnabled true
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            // 定义proto文件目录
+            proto {
+                srcDir 'src/main/proto'
+                include '**/*.proto'
+            }
+            java {
+                srcDir 'src/main/java'
+            }
+        }
+    }
+
+    protobuf {
+        protoc {
+            artifact = 'com.google.protobuf:protoc:3.1.0'
+        }
+        generateProtoTasks {
+            all().each { task ->
+                task.builtins {
+                    remove java
+                }
+                task.builtins {
+                    java {}
+                    cpp {}
+                }
+            }
+        }
+        generatedFilesBaseDir = "$projectDir/src/generated"
+    }
+
+    //在这里添加：
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    buildTypes {
+
+        debug {
+            debuggable true
+            minifyEnabled false //代码混淆   true开启
+            //自动去除没有使用的资源,上一个条件必须开启
+            shrinkResources false
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            minifyEnabled false
+            buildConfigField "boolean", "LOG_DEBUG", "false" //不显示log
+            shrinkResources false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    // 强制改变所有引用com.android.support版本为rootProject.ext.supportLibVersion
+   /* configurations.all {
+        resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+            def requested = details.requested
+            if (requested.group == 'com.android.support') {
+                if (!requested.name.startsWith("multidex")) {
+                    details.useVersion rootProject.ext.support4Version
+                }
+            }
+        }
+    }*/
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    productFlavors {
+        xiaomi {
+            manifestPlaceholders = [APP_CHANNEL_VALUE: "小米"]
+        }
+        Huawei {
+            manifestPlaceholders = [APP_CHANNEL_VALUE: "华为"]
+        }
+        qh360 {
+            manifestPlaceholders = [APP_CHANNEL_VALUE: "360"]
+        }
+        yingyongbao {
+            manifestPlaceholders = [APP_CHANNEL_VALUE: "应用宝"]
+        }
+    }
+}
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.annotation:annotation:1.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.squareup.okhttp3:okhttp:3.4.1'
+    implementation 'com.squareup.okio:okio:1.9.0'
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-15'
+    implementation 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-15'
+    implementation 'com.facebook.fresco.helper:fresco-helper:1.6.3'
+    // butterknife
+   /* implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'*/
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+    implementation project(path: ':lib_statusbar')
+    implementation project(path: ':lib_loadmore')
+    implementation project(path: ':lib_circularprogressbar')
+    implementation project(path: ':lib_danmaku')
+    implementation project(path: ':lib_countdown')
+//    implementation project(path: ':lib_svga')
+    implementation 'com.github.yyued:SVGAPlayer-Android:latest.release'
+
+    implementation 'com.github.mcxtzhang:all-base-adapter:V1.8.0'
+    implementation files('libs/netty-3.6.6.Final.jar')
+    implementation(name: 'sharetrace-android-sdk_v1.2.2', ext: 'aar')
+    implementation 'org.litepal.android:java:3.0.0'
+    // 定义protobuf依赖，使用精简版
+    implementation 'com.google.protobuf:protobuf-java:3.1.0'    // 3.添加库的路径
+    implementation 'com.google.protobuf:protoc:3.1.0'          // 3.添加库的路径
+
+    implementation 'androidx.multidex:multidex:2.0.0'
+
+    implementation 'com.github.wildma:PictureSelector:1.1.1'
+//    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v1.5.0'
+    //implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    //弹幕烈焰使
+    implementation 'com.github.ctiao:DanmakuFlameMaster:0.5.4'
+
+    //Tab指示器
+
+    implementation 'joda-time:joda-time:2.9.7'
+
+    //RecyclerView Adapter库
+//    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.8.6'
+//    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+
+    implementation 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:+'
+    implementation(name: 'alipaySdk-15.7.9-20200727142846', ext: 'aar')
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+    //七牛
+
+    implementation 'com.nbsp:library:1.8'
+
+    implementation 'com.contrarywind:wheelview:4.1.0'
+    implementation 'org.litepal.android:java:3.0.0'
+    implementation 'com.github.open-android:Zxing:v1.0.3'
+
+    //即构
+    implementation 'im.zego:express-video:1.17.5'
+
+    implementation 'com.dalong:marqueeview:1.0.1'
+
+    //腾讯bug日志收集 //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.2.0
+    implementation 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.3.11"
+    annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
+    implementation 'com.alibaba:fastjson:latest.release'
+    api project(path: ':lib_egg')
+    api project(path: ':common')
+    api project(path: ':order')
+    implementation project(path: ':webLib')
+
+}
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/public_top_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/top_title_bar_height"
+    android:background="@color/white"
+    android:visibility="visible">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:drawableLeft="@drawable/titlebar_back_selector"
+            android:gravity="center_vertical"
+            android:padding="@dimen/dp_8"
+            android:textColor="@color/titlebar_left_text_color"
+            android:textSize="@dimen/sp_16" />
+
+        <View
+            android:layout_width="0.0dip"
+            android:layout_height="1.0dip"
+            android:layout_weight="1.0" />
+
+        <Button
+            android:id="@+id/right"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center|right"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_marginRight="@dimen/dp_4"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:drawablePadding="@dimen/dp_4"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_10"
+            android:paddingRight="@dimen/dp_10"
+            android:text="下一步"
+            android:textColor="@color/blackColor"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_my_diamond_num"
+            android:layout_width="wrap_content"
+            android:layout_height="29.0dip"
+            android:layout_gravity="center|right"
+            android:drawablePadding="5.0dip"
+            android:gravity="center"
+            android:paddingLeft="5.0dip"
+            android:paddingRight="5.0dip"
+            android:text="105"
+            android:textColor="@color/blackColor"
+            android:textSize="14.0dip"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/surplus_diamond_num"
+            android:layout_width="81.0dip"
+            android:layout_height="27.0dip"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="10.0dip"
+            android:gravity="center"
+            android:text="开通会员"
+            android:textSize="14.0dip"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/title_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/blackColor"
+        android:textSize="@dimen/sp_16" />
+
+    <include
+        android:id="@+id/titlebar_line"
+        layout="@layout/line"
+        android:layout_width="fill_parent"
+        android:layout_height="1.0px"
+        android:layout_alignParentBottom="true" />
+</RelativeLayout>

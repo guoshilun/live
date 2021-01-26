@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/titlebar_title_layout" />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/home_all_vp"
+                layout="@layout/layout_home_all_header_view"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/dp_150" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:id="@+id/iv_hot"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:src="@mipmap/live_icon_found_hot" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:layout_toRightOf="@id/iv_hot"
+                    android:text="热榜"
+                    android:textColor="@color/color_333"
+                    android:textSize="@dimen/sp_16" />
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_20">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_user"
+                        android:layout_width="@dimen/dp_173"
+                        android:layout_height="@dimen/dp_107"
+                        android:layout_below="@id/iv_hot"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/bg_found_user"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:paddingTop="@dimen/dp_5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="用户榜"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/iv_crown"
+                            android:layout_width="@dimen/dp_44"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:src="@mipmap/live_icon_found_crown" />
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/sdv_header"
+                            android:layout_width="@dimen/dp_48"
+                            android:layout_height="@dimen/dp_48"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/dp_32"
+                            android:background="@drawable/bg_found_hollow_circle"
+                            android:padding="@dimen/dp_2"
+                            android:scaleType="fitXY"
+                            fresco:actualImageScaleType="centerCrop"
+                            fresco:fadeDuration="300"
+                            fresco:placeholderImage="@mipmap/app_default_middle"
+                            fresco:placeholderImageScaleType="centerCrop"
+                            fresco:roundAsCircle="true" />
+
+                        <TextView
+                            android:id="@+id/tv_user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/sdv_header"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/dp_3"
+                            android:text="【虚位以待】"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_10" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_host"
+                        android:layout_width="@dimen/dp_173"
+                        android:layout_height="@dimen/dp_107"
+                        android:layout_below="@id/iv_hot"
+                        android:layout_marginLeft="@dimen/dp_9"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_toRightOf="@id/rl_user"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/bg_found_host"
+                        android:paddingLeft="@dimen/dp_5"
+                        android:paddingTop="@dimen/dp_5">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="主播榜"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_14"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/iv_crown_host"
+                            android:layout_width="@dimen/dp_44"
+                            android:layout_height="@dimen/dp_30"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:src="@mipmap/live_icon_found_crown" />
+
+                        <com.facebook.drawee.view.SimpleDraweeView
+                            android:id="@+id/sdv_header_host"
+                            android:layout_width="@dimen/dp_48"
+                            android:layout_height="@dimen/dp_48"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/dp_32"
+                            android:background="@drawable/bg_found_hollow_circle"
+                            android:padding="@dimen/dp_2"
+                            android:scaleType="fitXY"
+                            fresco:actualImageScaleType="centerCrop"
+                            fresco:fadeDuration="300"
+                            fresco:placeholderImage="@mipmap/app_default_middle"
+                            fresco:placeholderImageScaleType="centerCrop"
+                            fresco:roundAsCircle="true" />
+
+                        <TextView
+                            android:id="@+id/tv_user_name_host"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/sdv_header_host"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="@dimen/dp_3"
+                            android:text="【虚位以待】"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_10" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:text="推荐主播"
+                android:textColor="@color/color_333"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:overScrollMode="never" />
+
+        </LinearLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>

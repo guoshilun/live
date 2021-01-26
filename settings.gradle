@@ -1,0 +1,8 @@
+include ':library'
+include ':common'
+include ':order'
+include ':webLib'
+include ':lib_egg'
+rootProject.name='JKProject'
+include ':app', ':lib_statusbar', ':lib_loadmore', ':lib_circularprogressbar',':lib_countdown',':lib_danmaku'
+//,':lib_svga'

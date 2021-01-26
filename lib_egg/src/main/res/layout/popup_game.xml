@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="#fff">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@drawable/shape_result_top"
+        android:text="小游戏"
+        android:gravity="center"
+        android:textColor="#fff"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:id="@+id/content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/coin"
+            android:layout_width="70dp"
+            android:layout_height="102dp"
+            android:layout_marginTop="11dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="1dp"
+            app:layout_constraintEnd_toStartOf="@id/egg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/coinIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="78dp"
+                    android:src="@drawable/coin" />
+
+                <TextView
+                    android:id="@+id/coinName"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:background="#FF9E16"
+                    android:gravity="center"
+                    android:text="幸运金币"
+                    android:textColor="#fff"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/egg"
+            android:layout_width="70dp"
+            android:layout_height="102dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="1dp"
+            app:layout_constraintEnd_toStartOf="@id/more"
+            app:layout_constraintStart_toEndOf="@id/coin"
+            app:layout_constraintTop_toTopOf="@id/coin">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/eggIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="78dp"
+                    android:src="@drawable/egg" />
+
+                <TextView
+                    android:id="@+id/eggName"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:background="#FF9E16"
+                    android:gravity="center"
+                    android:text="砸金蛋"
+                    android:textColor="#fff"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/more"
+            android:layout_width="70dp"
+            android:visibility="gone"
+            android:layout_height="102dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/egg"
+            app:layout_constraintTop_toTopOf="@id/coin">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="78dp"
+                    android:src="@drawable/more" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:background="#ccc"
+                    android:gravity="center"
+                    android:text="限时抽奖"
+                    android:textColor="#fff"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/progress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title">
+
+        <ProgressBar
+            android:id="@+id/progressbar"
+            android:layout_width="50dp"
+            android:indeterminateTint="#EA00FF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="50dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

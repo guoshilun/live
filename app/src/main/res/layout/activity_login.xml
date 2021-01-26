@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_log"
+        android:layout_width="@dimen/dp_90"
+        android:layout_height="@dimen/dp_90"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_99"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        app:roundedCornerRadius="@dimen/dp_10"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:fadeDuration="300"
+        fresco:placeholderImage="@mipmap/app_default_middle"
+        fresco:placeholderImageScaleType="centerCrop" />
+
+
+    <RelativeLayout
+        android:id="@+id/ll_et_number"
+        android:layout_width="@dimen/dp_266"
+        android:layout_height="@dimen/dp_50"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_226"
+        android:background="@mipmap/icon_login_unclick_number"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_7"
+        android:paddingTop="@dimen/dp_8"
+        android:paddingRight="7dp"
+        android:paddingBottom="@dimen/dp_8">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:gravity="center_vertical"
+            android:text="+86"
+            android:textColor="@color/color_A0DAD8"
+            android:textSize="@dimen/sp_17"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="@dimen/dp_1"
+            android:layout_height="@dimen/dp_17"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_toRightOf="@id/tv_1"
+            android:background="@color/color_A0D9D8" />
+
+        <EditText
+            android:id="@+id/et_number"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_17"
+            android:layout_toRightOf="@id/tv_1"
+            android:autofillHints=""
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:maxLength="11"
+            android:hint="输入手机号"
+            android:inputType="phone"
+            android:textColor="@color/color_A0DAD8"
+            android:textColorHint="@color/color_A0D9D8"
+            android:textSize="@dimen/sp_15" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_code"
+        android:layout_width="@dimen/dp_266"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/ll_et_number"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_11"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/et_code"
+            android:layout_width="@dimen/dp_164"
+            android:layout_height="match_parent"
+            android:autofillHints=""
+            android:background="@mipmap/icon_login_unclick_code_bg"
+            android:gravity="center_vertical"
+            android:hint="输入验证码"
+            android:inputType="number"
+            android:maxLength="6"
+            android:paddingTop="@dimen/dp_8"
+            android:paddingRight="@dimen/dp_8"
+            android:paddingBottom="@dimen/dp_8"
+            android:paddingLeft="@dimen/dp_28"
+            android:textColor="@color/color_A0DAD8"
+            android:textColorHint="@color/color_475C74"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:id="@+id/tv_send_code"
+            android:layout_width="@dimen/dp_104"
+            android:layout_height="@dimen/dp_50"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/icon_login_unclick_send_code_bg"
+            android:gravity="center"
+            android:text="发验证码"
+            android:padding="@dimen/dp_8"
+            android:textColor="@color/color_465B73"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/tv_login"
+        android:layout_width="@dimen/dp_263"
+        android:layout_height="@dimen/dp_99"
+        android:layout_below="@id/rl_code"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_26"
+        android:src="@mipmap/icon_login_btn_bg" />
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_login"
+        android:layout_marginLeft="@dimen/dp_92"
+        android:layout_marginTop="@dimen/dp_7"
+        android:layout_marginRight="@dimen/dp_91"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_weight="1"
+            android:background="@color/color_3E9EDE" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_7"
+            android:layout_marginRight="@dimen/dp_7"
+            android:text="快速登录"
+            android:textColor="@color/color_3E9EDE"
+            android:textSize="@dimen/sp_13" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_weight="1"
+            android:background="@color/color_3E9EDE" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_151"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dp_91"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginRight="@dimen/dp_91">
+
+        <ImageView
+            android:id="@+id/iv_qq_login"
+            android:layout_width="@dimen/dp_36"
+            android:layout_height="@dimen/dp_36"
+            android:layout_weight="1"
+            android:src="@mipmap/icon_login_qq_img" />
+
+        <ImageView
+            android:id="@+id/iv_wx_login"
+            android:layout_width="@dimen/dp_36"
+            android:layout_height="@dimen/dp_36"
+            android:layout_weight="1"
+            android:src="@mipmap/icon_login_wx_img" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_5"
+            android:textSize="@dimen/sp_8" />
+
+        <TextView
+            android:id="@+id/tv_agree1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_agree"
+            android:textSize="@dimen/sp_8" />
+    </LinearLayout>
+
+</RelativeLayout>

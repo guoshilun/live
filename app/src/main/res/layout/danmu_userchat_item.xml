@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clipChildren="false">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clipChildren="false">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/danmu_user_avatar"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="@dimen/dp_25"
+            android:layout_centerVertical="true"
+            android:visibility="visible"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            fresco:placeholderImage="@mipmap/app_icon_default_middle"
+            fresco:roundAsCircle="true"
+            fresco:roundingBorderColor="@color/white"
+            fresco:roundingBorderWidth="1.0dip" />
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="-12.0dip"
+            android:layout_toRightOf="@id/danmu_user_avatar"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <com.jk.jkproject.ui.widget.room.LiveLevelView
+                android:id="@+id/danmu_user_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_danmu_name_btn"
+                android:paddingLeft="@dimen/dp_12" />
+
+            <TextView
+                android:id="@+id/danmu_user_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_danmu_des_btn"
+                android:lines="1"
+                android:paddingLeft="@dimen/dp_12"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_7" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

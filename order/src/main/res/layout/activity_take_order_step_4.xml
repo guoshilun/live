@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="clickProxy"
+            type="com.jk.order.TakeOrderStep4Activity.Step4ClcikProxy" />
+
+        <variable
+            name="model"
+            type="com.jk.order.TakeOrderViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_EEEEEE">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@color/c_FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="@{ () -> clickProxy.back()}"
+                android:src="@drawable/back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/c_666666" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{model.gameName}"
+                android:textColor="@color/c_666666"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/c_EEEEEE"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/progressLayout"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/c_FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+
+            <ImageView
+                android:id="@+id/waiting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="19dp"
+                android:src="@drawable/order_progress_done"
+                app:layout_constraintEnd_toStartOf="@id/line1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/line1"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/c_EEEEEE"
+                app:layout_constraintBottom_toBottomOf="@id/waiting"
+                app:layout_constraintEnd_toStartOf="@id/doing"
+                app:layout_constraintStart_toEndOf="@id/waiting"
+                app:layout_constraintTop_toTopOf="@id/waiting" />
+
+
+            <View
+                android:id="@+id/line2"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/c_EEEEEE"
+                app:layout_constraintBottom_toBottomOf="@id/waiting"
+                app:layout_constraintEnd_toStartOf="@id/complete"
+                app:layout_constraintStart_toEndOf="@id/doing"
+                app:layout_constraintTop_toTopOf="@id/waiting" />
+
+            <View
+                android:id="@+id/line3"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginEnd="4dp"
+                android:background="@color/c_EEEEEE"
+                app:layout_constraintBottom_toBottomOf="@id/waiting"
+                app:layout_constraintEnd_toStartOf="@id/audit"
+                app:layout_constraintStart_toEndOf="@id/complete"
+                app:layout_constraintTop_toTopOf="@id/waiting" />
+
+
+            <ImageView
+                android:id="@+id/doing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/order_progress_done"
+                app:layout_constraintEnd_toStartOf="@id/line2"
+                app:layout_constraintStart_toEndOf="@id/line1"
+                app:layout_constraintTop_toTopOf="@id/waiting" />
+
+            <ImageView
+                android:id="@+id/complete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/order_progress_done"
+                app:layout_constraintEnd_toStartOf="@id/line3"
+                app:layout_constraintStart_toEndOf="@id/line2"
+                app:layout_constraintTop_toTopOf="@id/waiting" />
+
+            <ImageView
+                android:id="@+id/audit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="29dp"
+                android:src="@drawable/order_progress_done"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/line3"
+                app:layout_constraintTop_toTopOf="@id/waiting" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="技能认证"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/waiting"
+                app:layout_constraintStart_toStartOf="@id/waiting"
+                app:layout_constraintTop_toBottomOf="@id/waiting" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="填写资料"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/doing"
+                app:layout_constraintStart_toStartOf="@id/doing"
+                app:layout_constraintTop_toBottomOf="@id/doing" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="修改头像"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/complete"
+                app:layout_constraintStart_toStartOf="@id/complete"
+                app:layout_constraintTop_toBottomOf="@id/complete" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="客服审核"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/audit"
+                app:layout_constraintStart_toStartOf="@id/audit"
+                app:layout_constraintTop_toBottomOf="@id/audit" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <ImageView
+            android:id="@+id/auditImg"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/audit_ing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progressLayout" />
+
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="陪玩技能审核中"
+            android:textColor="@color/c_666666"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/auditImg" />
+
+
+        <TextView
+            android:id="@+id/label2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="3个工作日内会有结果，请耐心等待"
+            android:textColor="@color/c_666666"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label1" />
+
+
+        <TextView
+            drawable_radius="@{20}"
+            drawable_solidColor="@{model.infoComplete ? @color/c_009BEF : @color/c_cccccc}"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:enabled="@{model.infoComplete}"
+            android:gravity="center"
+            android:onClick="@{ () -> clickProxy.next()}"
+            android:text="下一步"
+            android:textColor="@color/c_FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/label2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

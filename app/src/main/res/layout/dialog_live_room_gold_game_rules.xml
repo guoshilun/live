@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pk_dialog_round_white">
+
+    <LinearLayout
+        android:id="@+id/ll_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_46"
+        android:background="@drawable/bg_pk_dialog_top"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="@dimen/dp_10"
+            android:src="@mipmap/icon_white_return"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_pk_record"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_46"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dp_12"
+        android:gravity="center_vertical"
+        android:text="PK规则说明"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_17" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_below="@id/ll_1"
+        android:layout_above="@id/iv_title"
+        android:background="@color/white"
+        android:layout_marginTop="@dimen/dp_16"
+        android:layout_marginLeft="@dimen/dp_32"
+        android:layout_marginRight="@dimen/dp_32"
+        android:layout_marginBottom="@dimen/dp_20"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv"
+            android:scaleType="fitXY"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </androidx.core.widget.NestedScrollView>
+    <WebView
+        android:id="@+id/web"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_1"
+        android:layout_above="@id/iv_title"
+        android:visibility="gone"
+        android:background="@color/white" />
+
+
+    <TextView
+        android:id="@+id/iv_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_46"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_pk_dialog_round_gary"
+        android:gravity="center"
+        android:text="关  闭"
+        android:textColor="@color/color_FF5959"
+        android:textSize="@dimen/sp_17"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

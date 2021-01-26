@@ -1,0 +1,157 @@
+github:  https://github.com/loopj/android-async-http
+
+
+        AsyncHttpClient client = new AsyncHttpClient(); // 创建异步请求的客户端对象  
+        String url = "http://172.16.237.200:8080/video/login.do"; // 定义请求的地址  
+       
+        RequestParams params = new RequestParams();  
+        params.put("username", userName); 
+        params.put("userpass", userPass);
+        // 执行post方法  
+        client.post(url, params, new AsyncHttpResponseHandler() {  
+            /** 
+             * 成功处理的方法 
+             * statusCode:响应的状态码; headers:相应的头信息 比如 响应的时间，响应的服务器 ; 
+             * responseBody:响应内容的字节 
+             */  
+            @Override  
+            public void onSuccess(int statusCode, Header[] headers,  
+                    byte[] responseBody) {  
+                if (statusCode == 200) {  
+                    tv_result.setText(new String(responseBody)); // 设置显示的文本  
+                }  
+            }  
+  
+            /** 
+             * 失败处理的方法 
+             * error：响应失败的错误信息封装到这个异常对象中 
+             */  
+            @Override  
+            public void onFailure(int statusCode, Header[] headers,  
+                    byte[] responseBody, Throwable error) {  
+                error.printStackTrace();// 把错误信息打印出轨迹来  
+            }  
+        });  
+        
+        
+             下载：
+           /**
+	 * @param url
+	 *            要下载的文件URL
+	 * @throws Exception
+	 */
+	 public static void downloadFile(String url) throws Exception {
+
+		AsyncHttpClient client = new AsyncHttpClient();
+		// 指定文件类型
+		String[] allowedContentTypes = new String[] { "image/png", "image/jpeg" };
+		// 获取二进制数据如图片和其他文件
+		client.get(url, new BinaryHttpResponseHandler(allowedContentTypes) {
+
+			@Override
+			public void onSuccess(int statusCode, Header[] headers,
+					byte[] binaryData) {
+
+                super.onSuccess(arg0);
+                File file = Environment.getExternalStorageDirectory();
+                File file2 = new File(file, "cat");
+                file2.mkdir();
+                file2 = new File(file2, "cat.jpg");
+                try {
+                    FileOutputStream oStream = new FileOutputStream(file2);
+                    oStream.write(arg0);
+                    oStream.flush();
+                    oStream.close();
+                    textView.setText("可爱的猫咪已经保存在sdcard里面");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Log.i("hck", e.toString());
+                }
+
+			}
+
+			@Override
+			public void onFailure(int statusCode, Header[] headers,
+					byte[] binaryData, Throwable error) {
+				Toast.makeText(mContext, "下载失败", Toast.LENGTH_LONG).show();
+			}
+
+			@Override
+			public void onProgress(int bytesWritten, int totalSize) {
+				super.onProgress(bytesWritten, totalSize);
+				int count = (int) ((bytesWritten * 1.0 / totalSize) * 100);
+				// 下载进度显示
+				progress.setProgress(count);
+				Log.e("下载 Progress>>>>>", bytesWritten + " / " + totalSize);
+
+			}
+
+			@Override
+			public void onRetry(int retryNo) {
+				super.onRetry(retryNo);
+				// 返回重试次数
+			}
+
+		});
+	}
+
+
+             上传：
+           /**
+	 * @param path
+	 *            要上传的文件路径
+	 * @param url
+	 *            服务端接收URL
+	 * @throws Exception
+	 */
+	 public static void uploadFile(String path, String url) throws Exception {
+		File file = new File(path);
+		if (file.exists() && file.length() > 0) {
+			AsyncHttpClient client = new AsyncHttpClient();
+			RequestParams params = new RequestParams();
+			params.put("image", file);
+			// 上传文件
+			client.post(url, params, new AsyncHttpResponseHandler() {
+				@Override
+				public void onSuccess(int statusCode, Header[] headers,
+						byte[] responseBody) {
+					// 上传成功后要做的工作
+					Toast.makeText(mContext, "上传成功", Toast.LENGTH_LONG).show();
+					progress.setProgress(0);
+				}
+
+				@Override
+				public void onFailure(int statusCode, Header[] headers,
+						byte[] responseBody, Throwable error) {
+					// 上传失败后要做到工作
+					Toast.makeText(mContext, "上传失败", Toast.LENGTH_LONG).show();
+				}
+
+				@Override
+				public void onProgress(int bytesWritten, int totalSize) {
+					super.onProgress(bytesWritten, totalSize);
+					int count = (int) ((bytesWritten * 1.0 / totalSize) * 100);
+					// 上传进度显示
+					progress.setProgress(count);
+					Log.e("上传 Progress>>>>>", bytesWritten + " / " + totalSize);
+				}
+
+				@Override
+				public void onRetry(int retryNo) {
+					super.onRetry(retryNo);
+					// 返回重试次数
+				}
+
+			});
+		} else {
+			Toast.makeText(mContext, "文件不存在", Toast.LENGTH_LONG).show();
+		}
+
+	}
+	
+	
+	
+	
+
+        
+        

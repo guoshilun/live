@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bean"
+            type="com.jk.jkproject.UserGameListBean.DataBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:background="@color/c_FFFFFF">
+
+        <ImageView
+            android:id="@+id/img"
+            imageUrl="@{bean.img}"
+            android:layout_width="100dp"
+            android:scaleType="centerCrop"
+            android:layout_height="63dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/gameName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:text="@{bean.name}"
+            android:textColor="@color/c_666666"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/img"
+            app:layout_constraintTop_toTopOf="@id/img"
+            tools:text="哈哈哈" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="11dp"
+            android:text="@{bean.dan_name}"
+            android:textColor="@color/c_F36E2D"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/gameName"
+            app:layout_constraintStart_toEndOf="@id/gameName" />
+
+
+        <com.fansan.common.DrawableTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="21dp"
+            android:drawablePadding="2dp"
+            android:gravity="center"
+            android:text='@{bean.order_price + "/" + bean.units}'
+            android:textColor="@color/c_009BEF"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/gameName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:leftDrawable="@drawable/diamond"
+            app:leftDrawableHeight="9dp"
+            app:leftDrawableWidth="12dp" />
+
+
+        <TextView
+            android:id="@+id/introduce"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="21dp"
+            android:ellipsize="end"
+            android:gravity="start"
+            android:maxLines="2"
+            android:text="@{bean.introduce}"
+            android:textColor="@color/c_969696"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toTopOf="@id/recordLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/gameName"
+            app:layout_constraintTop_toBottomOf="@id/gameName"
+            tools:text="介绍介绍介绍介绍介绍介绍" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/recordLayout"
+            drawable_radius="@{15}"
+            drawable_solidColor="@{@color/c_FFFFFF}"
+            drawable_strokeColor="@{@color/c_F08BE8}"
+            drawable_strokeWidth="@{1}"
+            android:layout_width="51dp"
+            android:layout_height="19dp"
+            app:layout_constraintBottom_toBottomOf="@id/img"
+            app:layout_constraintStart_toStartOf="@id/gameName">
+
+            <ImageView
+                android:id="@+id/wave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:src="@drawable/recorder_wave"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/record"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/record"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="2dp"
+                android:text='@{bean.video_duration + "S"}'
+                android:textColor="@color/c_F08BE8"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/wave"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/takeOrder"
+            drawable_radius="@{10}"
+            drawable_solidColor="@{@color/c_FF5B99}"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:text="下单"
+            android:textColor="@color/c_FFFFFF"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/recordLayout" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@color/c_EEEEEE"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

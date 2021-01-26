@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.jk.order.TakeOrderViewModel" />
+
+        <variable
+            name="clickProxy"
+            type="com.jk.order.TakeOrderPowerModifyActivity.PowerClickProxy" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_EEEEEE">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="41dp"
+            android:background="@color/c_FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="@{() -> clickProxy.back()}"
+                android:src="@drawable/back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/c_666666" />
+
+            <!--            -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编辑实力信息"
+                android:textColor="@color/c_666666"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/imgLayout"
+            drawable_radius="@{8}"
+            drawable_solidColor="@{@color/c_FFFFFF}"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="上传图片"
+                android:textColor="@color/c_666666"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="（禁止盗用他人图片，发现会被封号）"
+                android:textColor="@color/c_666666"
+                android:textSize="10sp"
+                app:layout_constraintBaseline_toBaselineOf="@id/label"
+                app:layout_constraintStart_toEndOf="@id/label" />
+
+            <TextView
+                drawable_radius="@{10}"
+                drawable_solidColor="@{@color/c_FFFFFF}"
+                drawable_strokeColor="@{@color/c_FF5B99}"
+                drawable_strokeWidth="@{1}"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp"
+                android:gravity="center"
+                android:onClick="@{() -> clickProxy.viewSample()}"
+                android:text="查看实例"
+                android:textColor="@color/c_FF5B99"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/label"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/label" />
+
+            <ImageView
+                android:id="@+id/img"
+                imageUrl="@{model.gameImg}"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:onClick="@{() -> clickProxy.setPic()}"
+                android:scaleType="centerCrop"
+                app:layout_constraintTop_toBottomOf="@id/label" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="请上传清晰显示最新赛季游戏昵称和段位截图"
+                android:textColor="@color/c_666666"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@id/label"
+                app:layout_constraintTop_toBottomOf="@id/img" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/levelLayout"
+            drawable_radius="@{8}"
+            drawable_solidColor="@{@color/c_FFFFFF}"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:onClick="@{ () -> clickProxy.chooseLevel()}"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/imgLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="段位"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/order_right_arrow"
+                android:drawablePadding="10dp"
+                android:text="@{model.levelSelected.dan_name}"
+                android:textColor="@color/c_F36E2D"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="钻石" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            drawable_radius="@{20}"
+            drawable_solidColor="@{@color/c_009BEF}"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:onClick="@{() -> clickProxy.commit()}"
+            android:text="提交"
+            android:textColor="@color/c_FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/levelLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

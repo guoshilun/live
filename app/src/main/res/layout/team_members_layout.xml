@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/color_F1F5F8" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:fresco="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/team_info_details" />
+    <include android:id="@+id/rv_list" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/dp_15" android:layout_marginTop="@dimen/dp_10" android:layout_marginRight="@dimen/dp_15" layout="@layout/recycler_view" />
+</LinearLayout>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_F1F5F8">
+
+    <RelativeLayout
+        android:id="@+id/rl_team_host"
+        android:layout_width="@dimen/dp_150"
+        android:layout_height="@dimen/dp_70"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_6"
+        android:layout_weight="1.0"
+        android:background="@drawable/bg_white_round_btn"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_10"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_team_header"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:src="@mipmap/icon_team_header" />
+
+        <TextView
+            android:id="@+id/tv_team_count"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_team_header"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/dp_12"
+            android:singleLine="true"
+            android:text="12/500人"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_team_host"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_team_count"
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_toRightOf="@id/iv_team_header"
+            android:ellipsize="end"
+            android:paddingLeft="@dimen/dp_12"
+            android:singleLine="true"
+            android:text="@string/str_team_host"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_12" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_team_singing"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="@dimen/dp_70"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_toRightOf="@id/rl_team_host"
+        android:background="@drawable/bg_white_round_btn"
+        android:gravity="center_vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_team_singer_header"
+            android:layout_width="@dimen/dp_44"
+            android:layout_height="@dimen/dp_44"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginRight="@dimen/dp_6"
+            android:layout_marginBottom="@dimen/dp_13"
+            android:src="@mipmap/icon_team_header" />
+
+        <TextView
+            android:id="@+id/tv_team_singer_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_toRightOf="@id/iv_team_singer_header"
+            android:ellipsize="end"
+            android:maxLength="3"
+            android:singleLine="true"
+            android:text="10条"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_team_signing"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_team_singer_count"
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_toRightOf="@id/iv_team_singer_header"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/str_team_signing"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_team_promptly"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_3"
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_toRightOf="@id/tv_team_singer_count"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/str_team_promptly"
+            android:textColor="@color/tabSelectTextColor"
+            android:textSize="@dimen/sp_10" />
+
+        <TextView
+            android:id="@+id/tv_team_lockAll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_6"
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_toRightOf="@id/tv_team_promptly"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="@string/str_team_lock_all"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_10" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_item"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_team_host"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@drawable/bg_white_round_btn"
+        android:paddingLeft="@dimen/dp_25"
+        android:paddingTop="@dimen/dp_15"
+        android:paddingRight="@dimen/dp_25">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_team_header"
+            android:layout_width="@dimen/dp_61"
+            android:layout_height="@dimen/dp_61"
+            android:gravity="center"
+            android:scaleType="fitXY"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            fresco:placeholderImage="@mipmap/app_default_middle"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="true" />
+
+        <TextView
+            android:id="@+id/tv_team_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/app_name"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_14" />
+
+        <TextView
+            android:id="@+id/tv_team_termination"
+            android:layout_width="@dimen/dp_52"
+            android:layout_height="@dimen/dp_24"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_red_btn"
+            android:gravity="center"
+            android:text="@string/str_team_termination"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_10" />
+
+        <TextView
+            android:id="@+id/tv_team_Asa"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_24"
+            android:layout_below="@id/tv_team_name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:gravity="center"
+            android:text="@string/str_team_asa"
+            android:textColor="@color/color_FC5E8E"
+            android:textSize="@dimen/sp_10" />
+
+        <TextView
+            android:id="@+id/tv_team_id"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_24"
+            android:layout_below="@id/tv_team_Asa"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:gravity="center"
+            android:text="@string/str_team_asa"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_10" />
+
+        <TextView
+            android:id="@+id/tv_team_time"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_24"
+            android:layout_below="@id/tv_team_Asa"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_toRightOf="@id/tv_team_id"
+            android:gravity="center"
+            android:text="@string/str_team_asa"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_10" />
+
+        <include
+            layout="@layout/line"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_1"
+            android:layout_below="@id/tv_team_time"
+            android:layout_marginTop="@dimen/dp_9" />
+    </RelativeLayout>
+</RelativeLayout>

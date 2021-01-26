@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/live_gift_prv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_218"
+            android:background="@color/color_802b2b2b" />
+
+        <com.jk.jkproject.ui.widget.pagescroll.PageIndicatorView
+            android:id="@+id/live_gift_piv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text=""
+        android:textColor="@color/c_FFFFFF"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:id="@+id/empty"
+        android:visibility="gone"
+        android:textStyle="bold"
+        android:background="@color/color_2b2b2b"/>
+</FrameLayout>

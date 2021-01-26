@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_333"
+    android:layout_height="@dimen/dp_41">
+
+
+    <TextView
+        android:id="@+id/tv_new_name"
+        android:layout_width="@dimen/dp_27"
+        android:layout_height="@dimen/dp_14"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_13"
+        android:background="@drawable/bg_game_gold_record_new"
+        android:gravity="center"
+        android:text="最新"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_10"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="@dimen/dp_264"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/dp_13"
+        android:layout_toRightOf="@id/tv_new_name"
+        android:background="@drawable/bg_game_gold_item"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_8">
+
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="@dimen/dp_26"
+            android:layout_height="@dimen/dp_26"
+            android:src="@mipmap/icon_game_gold_img" />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="@dimen/dp_26"
+            android:layout_height="@dimen/dp_26"
+            android:layout_marginLeft="@dimen/dp_108"
+            android:layout_toRightOf="@id/iv_left"
+            android:src="@mipmap/live_icon_room_close" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_left"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_94"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="@dimen/dp_9"
+            android:layout_height="@dimen/dp_9"
+            android:scaleType="fitXY"
+            android:src="@mipmap/icon_game_gold_add_img" />
+
+        <TextView
+            android:id="@+id/tv_left_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:gravity="center"
+            android:text="1000000"
+            android:textColor="@color/color_009CF0"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_right"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_228"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="@dimen/dp_9"
+            android:layout_height="@dimen/dp_9"
+            android:scaleType="fitXY"
+            android:src="@mipmap/icon_game_gold_add_img" />
+
+        <TextView
+            android:id="@+id/tv_right_gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/live_icon_gift_diamond"
+            android:gravity="center"
+            android:text="1000000"
+            android:textColor="@color/color_009CF0"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

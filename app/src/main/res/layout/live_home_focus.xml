@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_item"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_10"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_10">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_header"
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:scaleType="fitXY"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            fresco:placeholderImage="@mipmap/app_default_middle"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundAsCircle="true" />
+
+        <TextView
+            android:id="@+id/tv_focus_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_toRightOf="@id/sdv_header"
+            android:text="@string/str_my_focus"
+            android:ellipsize="end"
+            android:maxEms="5"
+            android:maxLines="1"
+            android:textColor="@color/color_000"
+            android:textSize="@dimen/sp_14" />
+
+        <LinearLayout
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_2"
+            android:layout_toRightOf="@id/tv_focus_name"
+            android:background="@drawable/bg_blue_btn"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/iv_2"
+                android:layout_width="@dimen/dp_12"
+                android:layout_height="@dimen/dp_12"
+                android:src="@mipmap/live_icon_host_level" />
+
+            <TextView
+                android:id="@+id/tv_focus_level"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_14"
+                android:gravity="center"
+                android:text="LV15"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_8" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_focus_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_focus_name"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_60"
+            android:layout_toRightOf="@id/sdv_header"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="@color/color_666"
+            android:textSize="@dimen/text_10sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_20"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true">
+
+            <ImageView
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_toLeftOf="@id/tv_focus_count"
+                android:src="@mipmap/icon_team_header" />
+
+            <TextView
+                android:id="@+id/tv_focus_count"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_20"
+                android:layout_marginLeft="@dimen/dp_5"
+                android:gravity="bottom"
+                android:text="100"
+                android:textColor="@color/color_FFA723"
+                android:textSize="@dimen/sp_13" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_350"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_pic"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1.0"
+            android:gravity="center"
+            android:scaleType="fitXY"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            fresco:placeholderImage="@mipmap/app_default_small"
+            fresco:roundedCornerRadius="@dimen/dp_6" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_alignBottom="@id/sdv_pic"
+            android:scaleType="fitXY"
+            android:src="@mipmap/icon_pic_bottom" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30"
+            android:layout_alignTop="@id/sdv_pic"
+            android:scaleType="fitXY"
+            android:src="@mipmap/icon_pic_top" />
+
+        <TextView
+            android:id="@+id/tv_focus_live_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/dp_5"
+            android:layout_marginBottom="@dimen/dp_5"
+            android:text="@string/str_my"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+</LinearLayout>

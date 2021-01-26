@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="@dimen/dp_345"
+        android:layout_height="@dimen/dp_240"
+        android:layout_gravity="center"
+        android:background="@drawable/bg_live_room_white_btn"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_1"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center"
+            android:text="政治谣言"
+            android:textColor="@color/color_0390FC"
+            android:textSize="@dimen/sp_14" />
+
+        <include
+            layout="@layout/line"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_1" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center"
+            android:text="色情低俗"
+            android:textColor="@color/color_0390FC"
+            android:textSize="@dimen/sp_14" />
+
+        <include
+            layout="@layout/line"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_1" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center"
+            android:text="侮辱谩骂"
+            android:textColor="@color/color_0390FC"
+            android:textSize="@dimen/sp_14" />
+
+        <include
+            layout="@layout/line"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_1" />
+
+        <TextView
+            android:id="@+id/tv_4"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center"
+            android:text="垃圾广告"
+            android:textColor="@color/color_0390FC"
+            android:textSize="@dimen/sp_14" />
+
+        <include
+            layout="@layout/line"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_1" />
+
+        <TextView
+            android:id="@+id/tv_5"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center"
+            android:text="违法行为"
+            android:textColor="@color/color_0390FC"
+            android:textSize="@dimen/sp_14" />
+
+        <include
+            layout="@layout/line"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_1" />
+
+        <TextView
+            android:id="@+id/tv_6"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/dp_40"
+            android:gravity="center"
+            android:text="拉黑"
+            android:textColor="@color/color_0390FC"
+            android:textSize="@dimen/sp_14" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_7"
+        android:layout_width="@dimen/dp_345"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginBottom="@dimen/dp_15"
+        android:background="@drawable/bg_live_room_white_btn"
+        android:gravity="center"
+        android:text="@string/str_cancel"
+        android:textColor="@color/color_0390FC"
+        android:textSize="@dimen/sp_14" />
+</LinearLayout>

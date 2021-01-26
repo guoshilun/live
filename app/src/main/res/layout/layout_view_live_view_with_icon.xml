@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_icon"
+        android:layout_width="@dimen/dp_163"
+        android:layout_height="@dimen/dp_39"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="@drawable/bg_live_room_user_info_gray">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_icon"
+            android:layout_width="@dimen/dp_33"
+            android:layout_height="@dimen/dp_33"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            fresco:actualImageScaleType="centerInside"
+            fresco:fadeDuration="300"
+            fresco:placeholderImage="@mipmap/app_icon_default_bg"
+            fresco:roundAsCircle="true"
+            fresco:roundedCornerRadius="15.0dip"
+            fresco:roundingBorderColor="@color/white"
+            fresco:roundingBorderWidth="1.0dip" />
+
+        <RelativeLayout
+            android:id="@+id/rll_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_3"
+            android:layout_marginTop="@dimen/dp_3"
+            android:layout_marginRight="@dimen/dp_3"
+            android:layout_toRightOf="@id/iv_icon">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxEms="5"
+                android:maxLines="1"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_10sp" />
+
+            <TextView
+                android:id="@+id/tv_user_name_host"
+                android:layout_width="@dimen/dp_30"
+                android:layout_height="@dimen/dp_14"
+                android:layout_below="@id/tv_name"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:layout_marginTop="@dimen/dp_5"
+                android:background="@drawable/bg_blue_btn"
+                android:drawableLeft="@mipmap/live_icon_my_host_level"
+                android:gravity="center"
+                android:paddingLeft="@dimen/dp_2"
+                android:text="0"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_8" />
+
+            <TextView
+                android:id="@+id/tv_hot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginLeft="@dimen/dp_3"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_toRightOf="@id/tv_user_name_host"
+                android:gravity="center_vertical"
+                android:text="1000w"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_8" />
+
+            <cn.iwgang.countdownview.CountdownView
+                android:id="@+id/game_countdown_room"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="2.0dip"
+                android:visibility="gone"
+                fresco:isShowDay="false"
+                fresco:isShowHour="true"
+                fresco:isShowMillisecond="false"
+                fresco:isShowMinute="true"
+                fresco:suffixGravity="center"
+                fresco:suffixLRMargin="1.0sp"
+                fresco:suffixTextColor="@color/app_red_color"
+                fresco:suffixTextSize="8.0sp"
+                fresco:timeTextColor="@color/app_red_color"
+                fresco:timeTextSize="8.0dip" />
+
+            <TextView
+                android:id="@+id/tv_des_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:textColor="@color/color_999"
+                android:textSize="@dimen/sp_8"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_love"
+                android:layout_width="@dimen/dp_33"
+                android:layout_height="@dimen/dp_33"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/live_icon_room_unfound" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_attention"
+            android:layout_width="wrap_content"
+            android:layout_height="18.0dip"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/rll_nickname"
+            android:gravity="center"
+            android:paddingLeft="6.0dip"
+            android:paddingRight="6.0dip"
+            android:text="+关注"
+            android:textColor="@color/blackColor"
+            android:textSize="10.0sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+</RelativeLayout>

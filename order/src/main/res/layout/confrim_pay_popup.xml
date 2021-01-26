@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="320dp"
+        drawable_radius="@{10}"
+        drawable_solidColor="@{@color/c_FFFFFF}"
+        android:layout_height="250dp">
+
+        <TextView
+            drawable_radiusRT="@{10}"
+            drawable_radiusLT="@{10}"
+            drawable_endColor="@{@color/c_7679FF}"
+            drawable_orientation="@{7}"
+            drawable_startColor="@{@color/c_EA00FF}"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:gravity="center"
+            android:text="完成确认"
+            android:textColor="@color/c_FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:text="请先确认大神已为你服务"
+            android:textColor="@color/c_666666"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:text="确认完成后钱款将打入大神账户您无法再发起退款等售后申请，请谨慎操作"
+            android:textColor="@color/c_666666"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            drawable_solidColor="@{@color/c_F0F0F0}"
+            android:layout_marginEnd="1dp"
+            drawable_radiusLB="@{10}"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="@color/c_666666"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/confirm"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/confirm"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="1dp"
+            android:gravity="center"
+            drawable_radiusRB="@{10}"
+            drawable_solidColor="@{@color/c_F0F0F0}"
+            android:text="确认完成"
+            android:textColor="@color/c_009BEF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cancel" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

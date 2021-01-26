@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.blankj.utilcode.util.TimeUtils" />
+
+        <variable
+            name="model"
+            type="com.jk.order.OrderViewModel" />
+
+        <variable
+            name="type"
+            type="com.fansan.common.callback.IntLiveData" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/c_EEEEEE">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/order_cancel_bg"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/c_FFFFFF" />
+
+            <TextView
+                android:id="@+id/cancelLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
+                android:text=""
+                android:textColor="@color/c_FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/c_FFFFFF"
+                android:textSize="10sp"
+                app:layout_constraintStart_toStartOf="@id/cancelLabel"
+                app:layout_constraintTop_toBottomOf="@id/cancelLabel"
+                tools:text="ahhadhhsadhsdha" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/infoLayout"
+            drawable_radius="@{8}"
+            drawable_solidColor="@{@color/c_FFFFFF}"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/top"
+            app:layout_constraintTop_toBottomOf="@id/top">
+
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="8dp"
+                android:text="退款信息"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/gameIcon"
+                imageUrl="@{model.orderInfoBean.picture}"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
+                android:src="@drawable/icon_user_level"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/username" />
+
+            <TextView
+                android:id="@+id/ganmeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@{model.orderInfoBean.gameName}"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/service"
+                app:layout_constraintStart_toEndOf="@id/gameIcon"
+                app:layout_constraintTop_toTopOf="@id/gameIcon"
+                tools:text="王者荣耀" />
+
+
+            <TextView
+                android:id="@+id/service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text='@{model.orderInfoBean.units + "X" + String.valueOf(model.orderInfoBean.count)}'
+                android:textColor="@color/c_F36E2D"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/gameIcon"
+                app:layout_constraintStart_toEndOf="@id/gameIcon"
+                app:layout_constraintTop_toBottomOf="@id/ganmeName" />
+
+            <com.fansan.common.DrawableTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:drawablePadding="2dp"
+                android:text="@{String.valueOf(model.orderInfoBean.price)}"
+                android:textColor="@color/c_009BEF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/gameIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/gameIcon"
+                app:leftDrawable="@drawable/diamond"
+                app:leftDrawableHeight="9dp"
+                app:leftDrawableWidth="12dp"
+                tools:text="5000" />
+
+            <com.fansan.common.DrawableTextView
+                android:id="@+id/poundage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:drawablePadding="2dp"
+                android:text="@{String.valueOf(model.orderInfoBean.price * model.orderInfoBean.count)}"
+                android:textColor="@color/c_009BEF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/gameIcon"
+                app:leftDrawable="@drawable/diamond"
+                app:leftDrawableHeight="9dp"
+                app:leftDrawableWidth="12dp"
+                tools:text="5000" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="退款金额："
+                android:textColor="@color/c_666666"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/poundage"
+                app:layout_constraintEnd_toStartOf="@id/poundage"
+                app:layout_constraintTop_toTopOf="@id/poundage" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/typeLayout"
+            drawable_radius="@{8}"
+            drawable_solidColor="@{@color/c_FFFFFF}"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="9dp"
+            app:layout_constraintEnd_toEndOf="@id/infoLayout"
+            app:layout_constraintStart_toStartOf="@id/infoLayout"
+            app:layout_constraintTop_toBottomOf="@id/infoLayout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:text="退款类型"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="11dp"
+                android:text="全额退款"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/infoLayout"
+            app:layout_constraintStart_toStartOf="@id/infoLayout"
+            app:layout_constraintTop_toBottomOf="@id/typeLayout">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/reasonLayout"
+                    drawable_radius="@{8}"
+                    drawable_solidColor="@{@color/c_FFFFFF}"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="@{(type == 4 || type == 6)?View.GONE:View.VISIBLE}"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/reasonLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="15dp"
+                        android:text='@{(type == 3 ? "拒绝":"退款") + "原因"}'
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="11dp"
+                        android:text="@{model.orderInfoBean.cause}"
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@id/reasonLabel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/reasonLabel" />
+
+                    <TextView
+                        android:id="@+id/markLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="15dp"
+                        android:text='@{(type == 3 ? "拒绝":"退款") + "说明"}'
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/reasonLabel" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="84dp"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginEnd="10dp"
+                        android:ellipsize="end"
+                        android:text="@{model.orderInfoBean.description}"
+                        app:layout_constraintBaseline_toBaselineOf="@id/markLabel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/markLabel"
+                        tools:text="..sadadadadadssadadadadadssadadadadadssadadadadadssadadadadads" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:id="@+id/appeal"
+                    drawable_radius="@{15}"
+                    drawable_solidColor="@{@color/c_009BEF}"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:gravity="center"
+                    android:text="申诉"
+                    android:textColor="@color/c_FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:visibility="@{type == 2?View.VISIBLE:View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@id/reasonLayout" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btnLayout"
+                    drawable_radius="@{8}"
+                    drawable_solidColor="@{@color/c_FFFFFF}"
+                    android:layout_width="match_parent"
+                    android:layout_height="161dp"
+                    android:layout_marginTop="20dp"
+                    android:visibility="@{(type == 5 || type == 4 )?View.VISIBLE:View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@id/reasonLayout"
+                    tools:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/label2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="9dp"
+                        android:layout_marginTop="13dp"
+                        android:text="请及时联系用户协商退款事宜"
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="13dp"
+                        android:orientation="vertical"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/label2"
+                        app:layout_constraintTop_toBottomOf="@id/label2">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawableStart="@drawable/shape_8fd8ff"
+                            android:drawablePadding="4dp"
+                            android:text="如果您同意，将直接退款给用户"
+                            android:textColor="@color/c_666666"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawableStart="@drawable/shape_8fd8ff"
+                            android:drawablePadding="4dp"
+                            android:text="如果您拒绝，用户可以申请客服介入处理"
+                            android:textColor="@color/c_666666"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:drawableStart="@drawable/shape_8fd8ff"
+                            android:drawablePadding="4dp"
+                            android:text="如果您逾期未处理，系统将自动退款给用户"
+                            android:textColor="@color/c_666666"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/reject"
+                        drawable_radius="@{15}"
+                        drawable_solidColor="@{@color/c_FFFFFF}"
+                        drawable_strokeColor="@{@color/c_009BEF}"
+                        drawable_strokeWidth="@{1}"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="30dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:text='@{type == 4 ?"上传凭证":"拒绝退款"}'
+                        android:textColor="@color/c_009BEF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/agree"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/agree"
+                        drawable_radius="@{15}"
+                        drawable_solidColor="@{@color/c_009BEF}"
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="30dp"
+                        android:gravity="center"
+                        android:text="同意退款"
+                        android:textColor="@color/c_FFFFFF"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/reject"
+                        app:layout_constraintTop_toTopOf="@id/reject" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/appealLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="用户申诉信息"
+                    android:textColor="@color/c_666666"
+                    android:textSize="12sp"
+                    android:visibility="@{type == 4?View.VISIBLE:View.GONE}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btnLayout" />
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/appealLayout"
+                    drawable_radius="@{8}"
+                    drawable_solidColor="@{@color/c_FFFFFF}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:visibility="@{(type == 4 || type == 6)?View.VISIBLE:View.GONE}"
+                    app:layout_constraintTop_toBottomOf="@id/appealLabel">
+
+                    <TextView
+                        android:id="@+id/appealLabelreason"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="15dp"
+                        android:text="申诉原因"
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="11dp"
+                        android:text="@{model.orderInfoBean.cause}"
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toBottomOf="@id/appealLabelreason"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/appealLabelreason" />
+
+                    <TextView
+                        android:id="@+id/mark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="15dp"
+                        android:text="申诉说明"
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/appealLabelreason" />
+
+                    <TextView
+                        android:id="@+id/appealDescription"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginEnd="10dp"
+                        android:ellipsize="end"
+                        android:text="@{model.orderInfoBean.description}"
+                        app:layout_constraintBaseline_toBaselineOf="@id/mark"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/mark"
+                        tools:text="..sadadadadadssadadadadadssadadadadadssadadadadadssadadadadads" />
+
+                    <TextView
+                        android:id="@+id/imgsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginTop="15dp"
+                        android:text="申诉凭证"
+                        android:textColor="@color/c_666666"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/appealDescription" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="35dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="35dp"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintTop_toBottomOf="@id/imgsLabel"
+                        app:spanCount="3"
+                        tools:listitem="@layout/item_add_img" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

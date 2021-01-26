@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_chat"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dp_4"
+    android:layout_marginTop="@dimen/dp_3"
+    android:layout_marginRight="@dimen/dp_4"
+    android:gravity="center_vertical">
+
+    <TextView
+        android:id="@+id/tv_user_level"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_14"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_6"
+        android:background="@drawable/bg_red_rount_btn"
+        android:drawableLeft="@mipmap/live_icon_user_level"
+        android:paddingLeft="@dimen/dp_2"
+        android:text="120"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_8"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/tv_host_level"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_14"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_6"
+        android:background="@drawable/bg_red_rount_btn"
+        android:drawableLeft="@mipmap/live_icon_host_level"
+        android:text="2"
+        android:paddingLeft="@dimen/dp_2"
+        android:layout_toRightOf="@id/tv_user_level"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_8"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_mage"
+        android:layout_width="@dimen/dp_25"
+        android:layout_height="@dimen/dp_14"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:layout_marginTop="@dimen/dp_6"
+        android:background="@drawable/bg_chat_red_btn"
+        android:text="管"
+        android:layout_toRightOf="@id/tv_host_level"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_8"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/livechat_msg_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/dp_5"
+        android:gravity="center|left"
+        android:paddingLeft="@dimen/dp_4"
+        android:paddingTop="@dimen/dp_4"
+        android:paddingRight="@dimen/dp_4"
+        android:paddingBottom="@dimen/dp_4"
+        android:textAlignment="gravity"
+        android:textColor="@color/white"
+        android:textDirection="ltr"
+        android:textSize="15.0sp" />
+</RelativeLayout>

@@ -1,0 +1,73 @@
+package com.jk.jkproject.ui.chat;
+
+import android.content.Context;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.SimpleTarget;
+import com.bumptech.glide.request.transition.Transition;
+import com.jk.jkproject.R;
+
+
+public class GlideUtils {
+
+    public static void loadChatImage(final Context mContext, String imgUrl, final ImageView imageView) {
+        final RequestOptions options = new RequestOptions()
+                .placeholder(R.mipmap.app_default_middle)// 正在加载中的图片
+                .error(R.mipmap.app_default_middle); // 加载失败的图片
+
+        Glide.with(mContext)
+                .load(imgUrl) // 图片地址
+                .apply(options)
+                .into(new SimpleTarget<Drawable>() {
+                    @Override
+                    public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                        ImageSize imageSize = BitmapUtil.getImageSize(((BitmapDrawable) resource).getBitmap());
+                        RelativeLayout.LayoutParams imageLP = (RelativeLayout.LayoutParams) (imageView.getLayoutParams());
+                        imageLP.width = imageSize.getWidth();
+                        imageLP.height = imageSize.getHeight();
+                        imageView.setLayoutParams(imageLP);
+
+                        Glide.with(mContext)
+                                .load(resource)
+                                .apply(options) // 参数
+                                .into(imageView);
+                    }
+                });
+    }
+
+    public static void loadChatImage(final Context mContext, String imgUrl, final ImageView imageView, int width) {
+        RoundedCorners roundedCorners = new RoundedCorners(6);
+        final RequestOptions options = new RequestOptions()
+                .bitmapTransform(roundedCorners)
+                .placeholder(R.mipmap.app_default_middle)// 正在加载中的图片
+                .error(R.mipmap.app_default_middle); // 加载失败的图片
+
+        Glide.with(mContext)
+                .load(imgUrl) // 图片地址
+                .apply(options)
+                .into(new SimpleTarget<Drawable>() {
+                    @Override
+                    public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                        ImageSize imageSize = BitmapUtil.getImageSize(((BitmapDrawable) resource).getBitmap());
+                        RelativeLayout.LayoutParams imageLP = (RelativeLayout.LayoutParams) (imageView.getLayoutParams());
+                        imageLP.width = width;
+                        imageLP.height = width;
+                        imageView.setLayoutParams(imageLP);
+
+                        Glide.with(mContext)
+                                .load(resource)
+                                .apply(options) // 参数
+                                .into(imageView);
+                    }
+                });
+    }
+
+}

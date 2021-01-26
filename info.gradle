@@ -1,0 +1,14 @@
+ext {
+    android = [
+            versionCode      : 5,
+            versionName      : "1.0.5",
+    ]
+
+    roots = [
+            test_base_url:"\"http://39.100.228.217:7777/\"",
+            base_url:"\"http://live.lingdangji.com:7777/\""
+    ]
+}
+
+//http://2555575gn3.wicp.vip/
+//http://live.lingdangji.com:7777/

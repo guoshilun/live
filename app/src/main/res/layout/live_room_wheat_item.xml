@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_item"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/dp_15">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdv_pic"
+            android:layout_width="@dimen/dp_63"
+            android:layout_height="@dimen/dp_63"
+            android:layout_centerVertical="true"
+            android:scaleType="fitXY"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:fadeDuration="300"
+            fresco:placeholderImage="@mipmap/app_default_middle"
+            fresco:roundAsCircle="true" />
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_9"
+            android:ellipsize="end"
+            android:maxEms="5"
+            android:maxLines="1"
+            android:text="光阴了无痕"
+            android:textColor="@color/color_646464"
+            android:textSize="@dimen/sp_11" />
+
+        <TextView
+            android:id="@+id/tv_user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_5"
+            android:maxLines="1"
+            android:visibility="gone"
+            android:text="JK账号:12345678"
+            android:textColor="@color/color_999"
+            android:textSize="@dimen/sp_8" />
+
+        <TextView
+            android:id="@+id/tv_user_level"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_12"
+            android:background="@drawable/bg_red_rount_btn"
+            android:drawableLeft="@mipmap/live_icon_user_level"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_2"
+            android:text="246"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_8" />
+
+        <TextView
+            android:id="@+id/tv_refused"
+            android:layout_width="@dimen/dp_49"
+            android:layout_height="@dimen/dp_31"
+            android:layout_marginTop="@dimen/dp_15"
+            android:background="@drawable/bg_wheat_refused"
+            android:gravity="center"
+            android:text="拒绝"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_line"
+        android:layout_width="@dimen/dp_1"
+        android:layout_height="@dimen/dp_96"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="@dimen/dp_7"
+        android:background="@drawable/bg_wheat_line" />
+</RelativeLayout>

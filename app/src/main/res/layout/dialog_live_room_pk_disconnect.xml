@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_333"
+    android:layout_height="@dimen/dp_260"
+    android:background="@drawable/bg_pk_dialog_round_white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_46"
+        android:background="@mipmap/icon_wheat_dialog_top"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:src="@mipmap/icon_pk_excmark" />
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_60"
+        android:layout_marginTop="@dimen/dp_83"
+        android:layout_marginRight="@dimen/dp_60"
+        android:text="PK开始之后，如果您主动提前结束PK则本场PK将直接被判定为失败。"
+        android:textColor="@color/color_969696"
+        android:textSize="@dimen/sp_13"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_1"
+        android:layout_marginLeft="@dimen/dp_53"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginRight="@dimen/dp_53"
+        android:text="若遇到掉线、闪退等不可抗力的事件时，将依据PK自然结束时的战力判定胜负你可以在【PK记录】中查看结果"
+        android:textColor="@color/color_969696"
+        android:textSize="@dimen/sp_9" />
+
+    <LinearLayout
+        android:id="@+id/ll_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_27"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="@dimen/dp_67"
+            android:layout_height="@dimen/dp_31"
+            android:background="@drawable/bg_wheat_refused"
+            android:gravity="center"
+            android:text="取  消"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_ok"
+            android:layout_width="@dimen/dp_67"
+            android:layout_height="@dimen/dp_31"
+            android:layout_marginLeft="@dimen/dp_99"
+            android:background="@drawable/bg_pk_invitation"
+            android:gravity="center"
+            android:text="接   受"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_13"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

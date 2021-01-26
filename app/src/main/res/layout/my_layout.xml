@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/color_F1F5F8">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_200"
+        android:background="@mipmap/me_top_bg"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_19"
+        android:paddingRight="@dimen/dp_9">
+
+        <RelativeLayout
+            android:id="@+id/rl_home_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_34">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv_user_header"
+                android:layout_width="@dimen/dp_62"
+                android:layout_height="@dimen/dp_62"
+                android:scaleType="fitXY"
+                android:src="@mipmap/live_icon_qq_zoo"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:fadeDuration="300"
+                fresco:placeholderImage="@mipmap/app_default_middle"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_toRightOf="@id/sdv_user_header">
+
+                <TextView
+                    android:id="@+id/tv_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:ellipsize="end"
+                    android:maxEms="5"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_18" />
+
+                <ImageView
+                    android:id="@+id/iv_sex"
+                    android:layout_width="@dimen/dp_14"
+                    android:layout_height="@dimen/dp_14"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_toRightOf="@id/tv_user_name"
+                    android:src="@mipmap/live_icon_my_female" />
+
+                <TextView
+                    android:id="@+id/tv_user_ID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_user_name"
+                    android:layout_marginLeft="@dimen/dp_4"
+                    android:layout_marginTop="@dimen/dp_10"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_14" />
+
+                <TextView
+                    android:id="@+id/tv_user_level"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_14"
+                    android:layout_marginLeft="@dimen/dp_3"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:background="@drawable/bg_red_rount_btn"
+                    android:paddingLeft="@dimen/dp_2"
+                    android:drawableLeft="@mipmap/live_icon_user_level"
+                    android:gravity="center"
+                    android:layout_toRightOf="@id/iv_sex"
+                    android:text="246"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+                <TextView
+                    android:id="@+id/tv_user_name_host"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_14"
+                    android:layout_marginLeft="@dimen/dp_3"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_toRightOf="@id/tv_user_level"
+                    android:background="@drawable/bg_blue_btn"
+                    android:paddingLeft="@dimen/dp_2"
+                    android:drawableLeft="@mipmap/live_icon_my_host_level"
+                    android:text="246"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_18"
+            android:src="@mipmap/live_icon_my_arrows" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_my_header"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/dp_105"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_155"
+        android:layout_marginRight="@dimen/dp_20"
+        android:background="@drawable/bg_white_round_btn"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_centerHorizontal="true">
+
+            <com.jk.jkproject.ui.widget.MyItemView
+                android:id="@+id/mv_my_top_up"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0" />
+
+            <com.jk.jkproject.ui.widget.MyItemView
+                android:id="@+id/mv_my_certification"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0" />
+
+            <com.jk.jkproject.ui.widget.MyItemView
+                android:id="@+id/mv_my_premiere"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1.0" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_my_header"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_10">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                fresco:cardElevation="0dp"
+                fresco:cardBackgroundColor="@color/c_FFFFFF"
+                fresco:cardCornerRadius="@dimen/dp_8"
+                android:layout_below="@id/rl_my_header"
+                android:id="@+id/invite"
+                android:layout_height="@dimen/dp_60">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:background="@drawable/share_bg"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:visibility="gone"
+                        android:textSize="16sp"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginTop="10dp"
+                        fresco:layout_constraintStart_toStartOf="parent"
+                        fresco:layout_constraintTop_toTopOf="parent"
+                        android:text="邀请好友！"
+                        android:textColor="@color/color_666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:textSize="12sp"
+                        android:visibility="gone"
+                        android:layout_marginStart="26dp"
+                        android:layout_marginBottom="11dp"
+                        fresco:layout_constraintStart_toStartOf="parent"
+                        fresco:layout_constraintBottom_toBottomOf="parent"
+                        android:text="好友消费后可获得10%收益"
+                        android:textColor="@color/color_666"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        fresco:layout_constraintEnd_toEndOf="parent"
+                        fresco:layout_constraintTop_toTopOf="parent"
+                        fresco:layout_constraintBottom_toBottomOf="parent"
+                        android:text="开始赚钱 GO！"
+                        android:visibility="gone"
+                        android:textColor="@color/c_FFFFFF"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:layout_marginEnd="13dp"
+                        android:layout_width="@dimen/dp_92"
+                        android:layout_height="@dimen/dp_30"
+                        android:background="@drawable/bg_pink_btn"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/color_666"
+                android:layout_marginTop="10dp"
+                android:text="我的资产"
+                android:textStyle="bold"
+                android:layout_below="@id/invite"
+                android:layout_height="wrap_content"
+                android:id="@+id/assetsLabel"/>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/me_balance"
+                    fresco:cardElevation="0dp"
+                    android:layout_marginEnd="5dp"
+                    fresco:cardCornerRadius="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_60">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:background="@drawable/me_balance_bg"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp"
+                                android:text="余  额"
+                                android:textStyle="bold"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                        <com.fansan.common.DrawableTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            fresco:leftDrawable="@drawable/me_diamon_blue"
+                            android:drawablePadding="4dp"
+                            android:layout_marginStart="10dp"
+                            android:id="@+id/balance"
+                            android:textColor="#fff"
+                            tools:text="9999999"
+                            android:gravity="start|center_vertical"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/me_gold_balance"
+                    fresco:cardElevation="0dp"
+                    android:layout_marginStart="5dp"
+                    fresco:cardCornerRadius="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_60">
+
+                    <LinearLayout
+                        android:background="@drawable/me_diamon_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:orientation="horizontal"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:textColor="#FFFFFF"
+                                android:textSize="14sp"
+                                android:text="金  钻"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="8dp"
+                                android:textStyle="bold"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+
+                        <com.fansan.common.DrawableTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            fresco:leftDrawable="@drawable/me_diamon_yellow"
+                            android:drawablePadding="4dp"
+                            android:layout_marginStart="10dp"
+                            android:id="@+id/goldenDiamond"
+                            android:textColor="#fff"
+                            tools:text="9999999"
+                            android:gravity="start|center_vertical"
+                            android:layout_weight="1"/>
+
+                    </LinearLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_white_round_btn"
+                android:orientation="vertical">
+
+                <com.jk.jkproject.ui.widget.DrawerLiveItemView
+                    android:id="@+id/div_wallet"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.jk.jkproject.ui.widget.DrawerLiveItemView
+                    android:id="@+id/div_host"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.jk.jkproject.ui.widget.DrawerLiveItemView
+                    android:id="@+id/div_fans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.jk.jkproject.ui.widget.DrawerLiveItemView
+                    android:id="@+id/div_guess"
+                    android:visibility="gone"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+                <com.jk.jkproject.ui.widget.DrawerLiveItemView
+                    android:id="@+id/order"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+                <com.jk.jkproject.ui.widget.DrawerLiveItemView
+                    android:id="@+id/orderCenter"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+                <com.jk.jkproject.ui.widget.DrawerLiveItemView
+                    android:id="@+id/setting"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:visibility="gone"
+                android:background="@drawable/bg_white_round_btn"
+                android:orientation="vertical">
+
+                <com.jk.jkproject.ui.widget.DrawerLiveItemView
+                    android:id="@+id/div_browse"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+
+                <com.jk.jkproject.ui.widget.DrawerLiveItemView
+                    android:id="@+id/div_appointment"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

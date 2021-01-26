@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.jk.jkproject.ui.widget.ResizeLayout
+        android:orientation="vertical" android:id="@+id/rzlay" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <com.jk.jkproject.ui.widget.MsgListView.MsgListView
+            android:id="@+id/message_list" android:background="@color/color_F1F5F8" android:paddingBottom="1.0dip" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@color/color_transparent00" android:transcriptMode="normal" android:cacheColorHint="@android:color/transparent" android:divider="@null" android:layout_weight="1.0" />
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/tt_layout_bottom" android:layout_width="fill_parent" android:layout_height="@dimen/dp_45" android:layout_below="@id/message_list">
+            <TextView android:textSize="@dimen/sp_12" android:textColor="@color/tabSelectTextColor" android:gravity="center" android:id="@+id/tv_fans" android:background="@drawable/bg_white_fans_btn" android:layout_width="@dimen/dp_59" android:layout_height="@dimen/dp_25" android:layout_marginLeft="@dimen/dp_5" android:text="@string/str_fans" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@+id/ll_msg_send" android:background="@drawable/bg_dark_round_btn" android:focusable="true" android:focusableInTouchMode="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/dp_34" android:layout_marginLeft="@dimen/dp_2" android:layout_weight="1.0">
+                <ImageView android:layout_gravity="center_vertical" android:layout_width="@dimen/dp_24" android:layout_height="@dimen/dp_24" android:layout_marginLeft="@dimen/dp_8" android:layout_marginRight="@dimen/dp_8" android:src="@mipmap/icon_live_room_face" />
+                <EditText android:textSize="@dimen/sp_16" android:textColor="@color/app_text_qiese" android:textColorHint="@color/color_B2B1B6" android:gravity="center_vertical" android:layout_gravity="center_vertical" android:id="@+id/et_msg" android:background="@null" android:focusable="true" android:scrollbars="vertical" android:layout_width="0.0dip" android:layout_height="@dimen/dp_34" android:hint="@string/live_send_danmu" android:maxLines="25" android:layout_weight="1.0" android:textCursorDrawable="@mipmap/icon_live_room_face" />
+            </LinearLayout>
+            <ImageView android:layout_gravity="center_vertical" android:id="@+id/iv_live_room_gift" android:layout_width="@dimen/dp_34" android:layout_height="@dimen/dp_34" android:layout_marginLeft="@dimen/dp_5" android:src="@mipmap/icon_live_room_gift" />
+        </LinearLayout>
+    </com.jk.jkproject.ui.widget.ResizeLayout>
+</RelativeLayout>

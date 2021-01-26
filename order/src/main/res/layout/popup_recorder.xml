@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="clickProxy"
+            type="com.jk.order.RecorderPopup.RecorderClickProxy" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        drawable_radius="@{8}"
+        drawable_solidColor="@{@color/c_FFFFFF}"
+        android:layout_width="250dp"
+        android:layout_height="250dp">
+
+        <TextView
+            android:id="@+id/timeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="00:00"
+            android:textColor="@color/c_666666"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/tips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="语音长度3S ~ 15S"
+            android:textColor="@color/c_666666"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/timeTv" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/recorderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/tips">
+
+
+            <ImageView
+                android:id="@+id/recorder"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/recorder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="长按录音"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recorder" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/controller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tips">
+
+            <ImageView
+                android:id="@+id/play"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="20dp"
+                android:onClick="@{ () -> clickProxy.playC()}"
+                android:src="@drawable/recorder_play"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cancel"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:onClick="@{ () -> clickProxy.reRecord()}"
+                android:src="@drawable/recorder_cancel"
+                app:layout_constraintBottom_toBottomOf="@id/play"
+                app:layout_constraintEnd_toStartOf="@id/play"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/play" />
+
+
+            <ImageView
+                android:id="@+id/complete"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:onClick="@{ () -> clickProxy.complete()}"
+                android:src="@drawable/recorder_complete"
+                app:layout_constraintBottom_toBottomOf="@id/play"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/play"
+                app:layout_constraintTop_toTopOf="@id/play" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="39dp"
+                android:text="重录"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/cancel"
+                app:layout_constraintStart_toStartOf="@id/cancel"
+                app:layout_constraintTop_toBottomOf="@id/cancel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="试听"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/play"
+                app:layout_constraintStart_toStartOf="@id/play"
+                app:layout_constraintTop_toBottomOf="@id/play" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="39dp"
+                android:text="完成"
+                android:textColor="@color/c_666666"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@id/complete"
+                app:layout_constraintStart_toStartOf="@id/complete"
+                app:layout_constraintTop_toBottomOf="@id/complete" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<emoticons>
+    <catalog title="default" icon="emoticon.png" description="默认表情包">
+	<emoticon id="_chujian_emoji_0_" name="[微笑]" file="emoji_00.png" />
+        <emoticon id="_chujian_emoji_01_" name="[笑哭]" file="emoji_01.png" />
+        <emoticon id="_chujian_emoji_02_" name="[花心]" file="emoji_02.png" />
+        <emoticon id="_chujian_emoji_03_" name="[嘻嘻]" file="emoji_03.png" />
+        <emoticon id="_chujian_emoji_04_" name="[委屈]" file="emoji_04.png" />
+        <emoticon id="_chujian_emoji_05_" name="[惊讶]" file="emoji_05.png" />
+        <emoticon id="_chujian_emoji_06_" name="[流鼻血]" file="emoji_06.png" />
+        <emoticon id="_chujian_emoji_07_" name="[哭]" file="emoji_07.png" />
+        <emoticon id="_chujian_emoji_08_" name="[害羞]" file="emoji_08.png" />
+        <emoticon id="_chujian_emoji_09_" name="[闭嘴]" file="emoji_09.png" />
+        <emoticon id="_chujian_emoji_10_" name="[愤怒]" file="emoji_10.png" />
+        <emoticon id="_chujian_emoji_11_" name="[调皮]" file="emoji_11.png" />
+        <emoticon id="_chujian_emoji_12_" name="[斜眼]" file="emoji_12.png" />
+        <emoticon id="_chujian_emoji_13_" name="[飞吻]" file="emoji_13.png" />
+        <emoticon id="_chujian_emoji_14_" name="[疑问]" file="emoji_14.png" />
+        <emoticon id="_chujian_emoji_15_" name="[汗]" file="emoji_15.png" />
+        <emoticon id="_chujian_emoji_16_" name="[滑稽]" file="emoji_16.png" />
+        <emoticon id="_chujian_emoji_17_" name="[难过]" file="emoji_17.png" />
+        <emoticon id="_chujian_emoji_18_" name="[可爱]" file="emoji_18.png" />
+        <emoticon id="_chujian_emoji_19_" name="[白眼]" file="emoji_19.png" />
+        <emoticon id="_chujian_emoji_20_" name="[大笑]" file="emoji_20.png" />
+        <emoticon id="_chujian_emoji_21_" name="[冷]" file="emoji_21.png" />
+        <emoticon id="_chujian_emoji_22_" name="[喷]" file="emoji_22.png" />
+        <emoticon id="_chujian_emoji_23_" name="[困]" file="emoji_23.png" />
+        <emoticon id="_chujian_emoji_24_" name="[晕]" file="emoji_24.png" />
+        <emoticon id="_chujian_emoji_25_" name="[呕吐]" file="emoji_25.png" />
+        <emoticon id="_chujian_emoji_26_" name="[悲剧]" file="emoji_26.png" />
+        <emoticon id="_chujian_emoji_27_" name="[衰]" file="emoji_27.png" />
+        <emoticon id="_chujian_emoji_28_" name="[生病]" file="emoji_28.png" />
+        <emoticon id="_chujian_emoji_29_" name="[财迷]" file="emoji_29.png" />
+        <emoticon id="_chujian_emoji_30_" name="[囧]" file="emoji_30.png" />
+        <emoticon id="_chujian_emoji_31_" name="[饿]" file="emoji_31.png" />
+        <emoticon id="_chujian_emoji_32_" name="[节日]" file="emoji_32.png" />
+        <emoticon id="_chujian_emoji_33_" name="[送礼]" file="emoji_33.png" />
+        <emoticon id="_chujian_emoji_34_" name="[YES]" file="emoji_34.png" />
+        <emoticon id="_chujian_emoji_35_" name="[NO]" file="emoji_35.png" />
+        <emoticon id="_chujian_emoji_36_" name="[天使]" file="emoji_36.png" />
+        <emoticon id="_chujian_emoji_37_" name="[恶魔]" file="emoji_37.png" />
+        <emoticon id="_chujian_emoji_38_" name="[心]" file="emoji_38.png" />
+        <emoticon id="_chujian_emoji_39_" name="[心碎]" file="emoji_39.png" />
+        <emoticon id="_chujian_emoji_40_" name="[一箭穿心]" file="emoji_40.png" />
+        <emoticon id="_chujian_emoji_41_" name="[信封]" file="emoji_41.png" />
+        <emoticon id="_chujian_emoji_42_" name="[药丸]" file="emoji_42.png" />
+        <emoticon id="_chujian_emoji_43_" name="[菜刀]" file="emoji_43.png" />
+        <emoticon id="_chujian_emoji_44_" name="[玫瑰]" file="emoji_44.png" />
+        <emoticon id="_chujian_emoji_45_" name="[蛋糕]" file="emoji_45.png" />
+        <emoticon id="_chujian_emoji_46_" name="[便便]" file="emoji_46.png" />
+        <emoticon id="_chujian_emoji_47_" name="[太阳]" file="emoji_47.png" />
+        <emoticon id="_chujian_emoji_48_" name="[晚安]" file="emoji_48.png" />
+        <emoticon id="_chujian_emoji_49_" name="[闪电]" file="emoji_49.png" />
+        <emoticon id="_chujian_emoji_50_" name="[猪头]" file="emoji_50.png" />
+        <emoticon id="_chujian_emoji_51_" name="[猴子]" file="emoji_51.png" />
+        <emoticon id="_chujian_emoji_52_" name="[doge]" file="emoji_52.png" />
+        <emoticon id="_chujian_emoji_53_" name="[强]" file="emoji_53.png" />
+        <emoticon id="_chujian_emoji_54_" name="[弱]" file="emoji_54.png" />
+        <emoticon id="_chujian_emoji_55_" name="[握手]" file="emoji_55.png" />
+        <emoticon id="_chujian_emoji_56_" name="[胜利]" file="emoji_56.png" />
+        <emoticon id="_chujian_emoji_57_" name="[勾引]" file="emoji_57.png" />
+        <emoticon id="_chujian_emoji_58_" name="[差劲]" file="emoji_58.png" />
+        <emoticon id="_chujian_emoji_59_" name="[OK]" file="emoji_59.png" />
+    </catalog>
+
+</emoticons>
+
+

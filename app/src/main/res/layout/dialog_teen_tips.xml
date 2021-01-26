@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp_10"
+    android:background="@drawable/bg_teen_tips">
+
+
+    <ImageView
+        android:id="@+id/iv_1"
+        android:layout_width="@dimen/dp_158"
+        android:layout_height="@dimen/dp_102"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_30"
+        android:src="@mipmap/icon_teen_tips" />
+
+
+    <TextView
+        android:id="@+id/tv_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/iv_1"
+        android:layout_marginLeft="@dimen/dp_22"
+        android:layout_marginTop="@dimen/dp_11"
+        android:layout_marginRight="@dimen/dp_22"
+        android:text="为呵护未成年人健康成长，锦阔电竞
+特别推出青少年模式，在该模式直播
+功能无法使用；如果你是成年人请点击
+【我知道了】；如果你是青少年请点击
+【我是青少年】。"
+        android:textColor="@color/color_333"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/tv_btn_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="我是青少年"
+        android:textColor="@color/color_FEB43C"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/tv_btn_2"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_below="@id/tv_btn_1"
+        android:layout_marginLeft="@dimen/dp_58"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_58"
+        android:background="@drawable/bg_red_follow_btn"
+        android:gravity="center"
+        android:text="我知道了"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_btn_2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="点击【我是青少年】将退出锦阔电竞"
+        android:textColor="@color/color_999"
+        android:textSize="@dimen/sp_12" />
+
+
+</RelativeLayout>

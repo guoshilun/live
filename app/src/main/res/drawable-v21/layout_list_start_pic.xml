@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 设置整个屏幕的大背景 -->
+    <item>
+        <bitmap android:src="@mipmap/splash_img" />
+    </item>
+</layer-list>

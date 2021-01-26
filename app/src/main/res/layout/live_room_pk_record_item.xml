@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_item"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dp_80"
+    android:layout_marginLeft="@dimen/dp_23"
+    android:layout_marginRight="@dimen/dp_27">
+
+    <TextView
+        android:id="@+id/tv_win"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="胜"
+        android:textColor="@color/color_FFA723"
+        android:textSize="@dimen/sp_13"
+        android:textStyle="bold" />
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/sdv_header"
+        android:layout_width="@dimen/dp_52"
+        android:layout_height="@dimen/dp_52"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_28"
+        android:layout_toRightOf="@id/tv_win"
+        android:scaleType="fitXY"
+        fresco:actualImageScaleType="centerCrop"
+        fresco:fadeDuration="300"
+        fresco:placeholderImage="@mipmap/app_default_middle"
+        fresco:roundAsCircle="true" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/dp_17"
+        android:layout_toRightOf="@id/sdv_header"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxEms="5"
+            android:maxLines="1"
+            android:text="@string/app_name"
+            android:textColor="@color/color_646464"
+            android:textSize="@dimen/sp_11"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_user_level"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_14"
+            android:layout_marginTop="@dimen/dp_9"
+            android:layout_toRightOf="@id/iv_sex"
+            android:background="@drawable/bg_red_rount_btn"
+            android:drawableLeft="@mipmap/live_icon_host_level"
+            android:gravity="center"
+            android:paddingLeft="@dimen/dp_2"
+            android:text="246"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_8" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_add"
+        android:layout_width="@dimen/dp_67"
+        android:layout_height="@dimen/dp_31"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/bg_pk_btn"
+        android:gravity="center"
+        android:text="邀请PK"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_13"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:layout_below="@id/sdv_header"
+        android:layout_marginLeft="@dimen/dp_69"
+        android:layout_marginTop="@dimen/dp_8"
+        android:background="@color/color_DCDCDC" />
+</RelativeLayout>

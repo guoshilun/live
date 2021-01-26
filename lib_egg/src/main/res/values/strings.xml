@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="diamond_price"><Data><![CDATA[<font color="#009BEF">%1$s</font> <font color="#FF8D31">/次</font>]]></Data></string>
+    <string name="egg_broadcast"><Data><![CDATA[恭喜 <font color="#3AFFF8">%1$s</font> 砸中 <font color="#FF8D31">%2$s</font> （]]></Data></string>
+    <string name="egg_broadcast_diamond"><Data><![CDATA[<font color="#009BEF">%1$s</font>）]]></Data></string>
+</resources>

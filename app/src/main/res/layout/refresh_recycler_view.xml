@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <in.srain.cube.views.ptr.PtrFrameLayout android:id="@+id/material_style_ptr_frame" android:layout_width="fill_parent" android:layout_height="fill_parent" cube_ptr:ptr_duration_to_close="300" cube_ptr:ptr_duration_to_close_header="2000" cube_ptr:ptr_keep_header_when_refresh="true" cube_ptr:ptr_pull_to_fresh="false" cube_ptr:ptr_ratio_of_header_height_to_refresh="1.2" cube_ptr:ptr_resistance="1.7" xmlns:cube_ptr="http://schemas.android.com/apk/res-auto">
+        <LinearLayout android:orientation="vertical" android:clickable="true" android:layout_width="fill_parent" android:layout_height="fill_parent">
+            <androidx.recyclerview.widget.RecyclerView android:scrollbarStyle="outsideOverlay" android:id="@+id/service_recycler_view" android:scrollbars="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" android:listSelector="@android:color/transparent" android:divider="@null" android:dividerHeight="0.0dip" />
+        </LinearLayout>
+    </in.srain.cube.views.ptr.PtrFrameLayout>
+</merge>

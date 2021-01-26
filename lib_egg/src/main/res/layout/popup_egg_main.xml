@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/c_FFFFFF"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:background="@drawable/shape_egg_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="砸金蛋赢大奖"
+            android:textColor="#fff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/rule"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="13dp"
+            android:src="@drawable/icon_pk_rules"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/middle"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/egg_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/top">
+
+
+        <com.opensource.svgaplayer.SVGAImageView
+            android:id="@+id/eggImg"
+            android:layout_width="230dp"
+            android:layout_height="180dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loopCount="0" />
+
+        <View
+            android:id="@+id/knockScope"
+            android:layout_width="145dp"
+            android:layout_height="145dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.opensource.svgaplayer.SVGAImageView
+            android:id="@+id/hammerImg"
+            android:layout_width="83dp"
+            android:layout_height="83dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginEnd="30dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="@id/eggImg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:loopCount="0" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/shape__232323_50"
+            android:orientation="horizontal"
+            android:paddingStart="10dp"
+            android:visibility="gone"
+            android:paddingTop="4dp"
+            tools:visibility="visible"
+            android:id="@+id/broadcastLayout"
+            android:paddingEnd="10dp"
+            android:paddingBottom="4dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/broadcast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="恭喜 粉红洛丽塔 砸中 真爱列车（"
+                android:textColor="#fff"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <com.fansan.common.DrawableTextView
+                android:id="@+id/broadcastDiamond"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="3dp"
+                android:gravity="center_vertical"
+                android:textColor="#fff"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                app:leftDrawable="@drawable/diamond"
+                app:leftDrawableHeight="9dp"
+                app:leftDrawableWidth="12dp" />
+
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/combo"
+            android:layout_width="154dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="28dp"
+            android:src="@drawable/combo_10_normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/copperHammer"
+            android:layout_width="68dp"
+            android:layout_height="73dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="100dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/copperLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:background="#FF8D31"
+                    android:gravity="center"
+                    android:text="铜锤"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/copper_hammer"
+                    app:layout_constraintBottom_toTopOf="@id/copperPrice"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/copperLabel" />
+
+                <com.fansan.common.DrawableTextView
+                    android:id="@+id/copperPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:drawablePadding="3dp"
+                    android:textColor="#009BEF"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:leftDrawable="@drawable/diamond"
+                    app:leftDrawableHeight="9dp"
+                    app:leftDrawableWidth="12dp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/goldenHammer"
+            android:layout_width="68dp"
+            android:layout_height="73dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="30dp"
+            app:cardBackgroundColor="#80cccccc"
+            app:cardCornerRadius="7dp"
+            app:cardElevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/goldenLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="16dp"
+                    android:background="#625166"
+                    android:gravity="center"
+                    android:text="金锤"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/golden_hammer"
+                    app:layout_constraintBottom_toTopOf="@id/goldenPrice"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/goldenLabel" />
+
+                <com.fansan.common.DrawableTextView
+                    android:id="@+id/goldenPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp"
+                    android:drawablePadding="3dp"
+                    android:textColor="#009BEF"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:leftDrawable="@drawable/diamond"
+                    app:leftDrawableHeight="9dp"
+                    app:leftDrawableWidth="12dp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/knockBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="6dp"
+            android:background="@drawable/shape__232323_50"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="点击砸蛋"
+            android:textColor="#fff"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/eggImg"
+            app:layout_constraintEnd_toEndOf="@id/eggImg"
+            app:layout_constraintStart_toStartOf="@id/eggImg" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_height="0dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="7dp"
+            app:cardBackgroundColor="#fff"
+            app:cardCornerRadius="7dp"
+            app:contentPadding="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eggImg">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_gift" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:background="#AA232323"
+            android:id="@+id/progress"
+            android:layout_height="match_parent">
+
+            <ProgressBar
+                android:layout_width="50dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="50dp"
+                android:progressTint="#FE5E51"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_height="50dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:background="#fff"
+        app:layout_constraintTop_toBottomOf="@id/middle">
+
+
+        <com.fansan.common.DrawableTextView
+            android:id="@+id/pocket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:drawablePadding="5dp"
+            android:gravity="center_vertical"
+            android:text="背包"
+            android:textColor="#FE5E51"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:rightDrawable="@drawable/my_gift"
+            app:rightDrawableHeight="31dp"
+            app:rightDrawableWidth="31dp" />
+
+        <com.fansan.common.DrawableTextView
+            android:id="@+id/diamond"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:drawablePadding="6dp"
+            android:text="-"
+            android:textColor="#009BEF"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:leftDrawable="@drawable/diamond"
+            app:leftDrawableHeight="13dp"
+            app:leftDrawableWidth="18dp"
+            app:rightDrawable="@drawable/right_arrow"
+            app:rightDrawableHeight="11dp"
+            app:rightDrawableWidth="7dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

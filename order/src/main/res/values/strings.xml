@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="set_order_price" translatable="false"><Data><![CDATA[最高可设置 <font color="#009BEF">%1$s</font> 钻石的接单价格]]></Data></string>
+</resources>

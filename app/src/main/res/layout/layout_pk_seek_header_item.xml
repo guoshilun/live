@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/rl_win_header"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_52"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:id="@+id/rl_header"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dp_50">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/sdv_header"
+                android:layout_width="@dimen/dp_36"
+                android:layout_height="@dimen/dp_36"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_8"
+                android:padding="@dimen/dp_2"
+                android:scaleType="fitXY"
+                fresco:actualImageScaleType="centerCrop"
+                fresco:fadeDuration="300"
+                fresco:placeholderImage="@mipmap/icon_pk_seek_header_emply"
+                fresco:placeholderImageScaleType="centerCrop"
+                fresco:roundAsCircle="true" />
+
+            <ImageView
+                android:id="@+id/iv_rank_crown"
+                android:layout_width="@dimen/dp_19"
+                android:layout_height="@dimen/dp_14"
+                android:layout_alignLeft="@id/sdv_header"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:src="@mipmap/icon_crown_1"
+                android:visibility="invisible" />
+
+            <ImageView
+                android:id="@+id/iv_rank_mvp"
+                android:layout_width="@dimen/dp_23"
+                android:layout_height="@dimen/dp_10"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="@dimen/dp_5"
+                android:src="@mipmap/icon_pk_mvp"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/iv_rank_count"
+            android:layout_width="@dimen/dp_9"
+            android:layout_height="@dimen/dp_9"
+            android:layout_alignRight="@id/rl_header"
+            android:layout_alignParentBottom="true"
+            android:scaleType="fitXY"
+            android:src="@mipmap/icon_pk_seek_left_top_1" />
+    </RelativeLayout>
+
+</RelativeLayout>
