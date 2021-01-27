@@ -38,4 +38,5 @@ data class OrderInfoBean(
     var description:String? = "",
     var appealCause:String? = "",
     var appealDescription:String? = "",
+    var events_one_buy:Int = 0,
 ) : Parcelable

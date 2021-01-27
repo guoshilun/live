@@ -38,7 +38,15 @@
                 app:layout_constraintTop_toTopOf="@id/date"
                 tools:text="待接单"
                 tools:textColor="@color/c_666666" />
-
+            <ImageView
+                android:id="@+id/iv_price_new_custom"
+                android:layout_marginRight="4dp"
+                android:src="@drawable/icon_price_new_custom"
+                app:layout_constraintRight_toLeftOf="@+id/status"
+                app:layout_constraintTop_toTopOf="@+id/status"
+                app:layout_constraintBottom_toBottomOf="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout"
                 android:layout_width="match_parent"

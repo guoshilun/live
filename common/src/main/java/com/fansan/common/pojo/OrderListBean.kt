@@ -32,6 +32,7 @@ class OrderListBean(
         var sumPrice: Int = 0,
         var units: String = "",
         var userId: String = "",
-        override val isHeader: Boolean
+        override val isHeader: Boolean,
+        var events_one_buy: Int = 0
     ) : SectionEntity,Parcelable
 }

@@ -1,6 +1,7 @@
 package com.jk.order
 
 import android.graphics.Color
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.blankj.utilcode.util.TimeUtils
@@ -34,6 +35,8 @@ class OrderListAdapter() : BaseSectionQuickAdapter<OrderListBean.Result, BaseVie
     override fun convert(holder: BaseViewHolder, item: OrderListBean.Result) {
 
         val takeBtn = holder.getView<TextView>(R.id.take)
+        val ivPriceNewCustom = holder.getView<ImageView>(R.id.iv_price_new_custom)
+        ivPriceNewCustom.visibility = if(item.events_one_buy == 0) View.GONE else View.VISIBLE
         val rejectBen = holder.getView<TextView>(R.id.rejectBtn)
         val statusTv = when (item.status) {
             1 -> {
@@ -164,6 +167,7 @@ class OrderListAdapter() : BaseSectionQuickAdapter<OrderListBean.Result, BaseVie
 
         val head = holder.getView<ImageView>(R.id.head)
         Glide.with(context).load(item.picture).into(head)
+
     }
 
 }

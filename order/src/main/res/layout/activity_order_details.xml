@@ -286,6 +286,7 @@
                     app:layout_constraintTop_toBottomOf="@id/ganmeName" />
 
                 <com.fansan.common.DrawableTextView
+                    android:id="@+id/dtv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
@@ -300,7 +301,15 @@
                     app:leftDrawable="@drawable/diamond"
                     app:leftDrawableHeight="9dp"
                     app:leftDrawableWidth="12dp" />
-
+                <ImageView
+                    android:visibility="@{model.orderInfoBean.events_one_buy == 0 ? View.GONE : View.VISIBLE}"
+                    android:layout_marginRight="4dp"
+                    android:src="@drawable/icon_price_new_custom"
+                    app:layout_constraintRight_toLeftOf="@+id/dtv"
+                    app:layout_constraintTop_toTopOf="@+id/dtv"
+                    app:layout_constraintBottom_toBottomOf="@+id/dtv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
                 <TextView
                     android:id="@+id/poundageLabel"
                     android:layout_width="wrap_content"
