@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -194,7 +195,7 @@ public class ChatUiHelper {
 //                    mSendBtn.setVisibility(View.GONE);
 //                    mAddButton.setVisibility(View.VISIBLE);//这里显示"+"号按钮
                     mSendBtn.setVisibility(View.VISIBLE);
-                    mAddButton.setVisibility(View.GONE);
+                    mAddButton.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -402,8 +403,15 @@ public class ChatUiHelper {
             softInputHeight = mSp.getInt(SHARE_PREFERENCE_TAG, dip2Px(270));
         }
         hideSoftInput();
-        mBottomLayout.getLayoutParams().height = softInputHeight;
-        mBottomLayout.setVisibility(View.VISIBLE);
+        int finalSoftInputHeight = softInputHeight;
+        mBottomLayout.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mBottomLayout.getLayoutParams().height = finalSoftInputHeight;
+                mBottomLayout.setVisibility(View.VISIBLE);
+            }
+        },200);
+
     }
 
 

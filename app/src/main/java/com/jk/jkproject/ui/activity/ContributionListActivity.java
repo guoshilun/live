@@ -41,6 +41,8 @@ public class ContributionListActivity extends BActivity implements ViewPager.OnP
     TextView tvTitle1;
     @BindView(R.id.tv_title_2)
     TextView tvTitle2;
+    @BindView(R.id.tv_title_3)
+    TextView tvTitle3;
     @BindView(R.id.ll_1)
     LinearLayout ll1;
     @BindView(R.id.live_vp_pager)
@@ -88,11 +90,17 @@ public class ContributionListActivity extends BActivity implements ViewPager.OnP
 
         if (mType == 3) {
             fragList.add(LiveContributionParentFragment3.newInstance(targetId));
-            tvTitle1.setText("粉丝贡献榜");
+            fragList.add(LiveContributionParentFragment3.newInstance(targetId));
+            fragList.add(LiveContributionParentFragment3.newInstance(targetId));
+            tvTitle1.setText("富豪榜");
             tvTitle1.setTextSize(17);
             tvTitle1.setTextColor(getResources().getColor(R.color.white));
-            tvTitle2.setVisibility(View.GONE);
-            tvTitle1.setEnabled(false);
+            tvTitle2.setText("主播榜");
+            tvTitle2.setTextSize(11);
+            tvTitle2.setTextColor(getResources().getColor(R.color.white));
+            tvTitle3.setText("大神榜");
+            tvTitle3.setTextSize(11);
+            tvTitle3.setTextColor(getResources().getColor(R.color.white));
         } else {
             fragList.add(LiveContributionParentFragment.newInstance(1));
             fragList.add(LiveContributionParent2Fragment.newInstance(2));
@@ -120,7 +128,7 @@ public class ContributionListActivity extends BActivity implements ViewPager.OnP
         bind.unbind();
     }
 
-    @OnClick({R.id.iv_title, R.id.tv_title_1, R.id.tv_title_2, R.id.tv_1, R.id.tv_2, R.id.tv_3})
+    @OnClick({R.id.iv_title, R.id.tv_title_1, R.id.tv_title_2,R.id.tv_title_3, R.id.tv_1, R.id.tv_2, R.id.tv_3})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_title:
@@ -129,12 +137,20 @@ public class ContributionListActivity extends BActivity implements ViewPager.OnP
             case R.id.tv_title_1:
                 tvTitle1.setTextSize(17);
                 tvTitle2.setTextSize(11);
+                tvTitle3.setTextSize(11);
                 vp.setCurrentItem(0);
                 break;
             case R.id.tv_title_2:
                 tvTitle1.setTextSize(11);
                 tvTitle2.setTextSize(17);
+                tvTitle3.setTextSize(11);
                 vp.setCurrentItem(1);
+                break;
+            case R.id.tv_title_3:
+                tvTitle1.setTextSize(11);
+                tvTitle2.setTextSize(11);
+                tvTitle3.setTextSize(17);
+                vp.setCurrentItem(2);
                 break;
             case R.id.tv_1:
                 setInitBg(0);
