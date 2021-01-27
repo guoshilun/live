@@ -8,6 +8,7 @@
         <variable
             name="bean"
             type="com.jk.jkproject.UserGameListBean.DataBean" />
+        <import type="android.view.View"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -123,6 +124,7 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
         <TextView
             android:id="@+id/takeOrder"
             drawable_radius="@{10}"
@@ -131,12 +133,21 @@
             android:layout_height="20dp"
             android:layout_marginEnd="20dp"
             android:gravity="center"
-            android:text="下单"
+            android:text="@{bean.events_one_buy == 0 ? `下单` : `首单1元`}"
             android:textColor="@color/c_FFFFFF"
             android:textSize="10sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/recordLayout" />
 
+        <ImageView
+            android:visibility="@{bean.events_one_buy == 0 ? View.GONE : View.VISIBLE}"
+            android:layout_marginRight="5dp"
+            app:layout_constraintRight_toLeftOf="@+id/takeOrder"
+            app:layout_constraintTop_toTopOf="@+id/takeOrder"
+            app:layout_constraintBottom_toBottomOf="@+id/takeOrder"
+            android:src="@mipmap/icon_price_new_custom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"

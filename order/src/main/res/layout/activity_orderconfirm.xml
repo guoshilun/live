@@ -5,6 +5,7 @@
 
     <data>
 
+        <import type="android.view.View"/>
         <variable
             name="global"
             type="com.fansan.common.GlobalAppViewModel" />
@@ -228,6 +229,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.fansan.common.DrawableTextView
+                        android:visibility="@{model.confirmOrderInfoBean.events_one_buy == 0 ? View.VISIBLE : View.GONE}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="15dp"
@@ -243,7 +245,52 @@
                         app:leftDrawable="@drawable/diamond"
                         app:leftDrawableHeight="9dp"
                         app:leftDrawableWidth="12dp" />
+                    <LinearLayout
+                        android:visibility="@{model.confirmOrderInfoBean.events_one_buy == 0 ? View.GONE : View.VISIBLE}"
+                        android:layout_marginEnd="15dp"
+                        android:gravity="center_vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:src="@drawable/icon_price_new_custom"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                        <com.fansan.common.DrawableTextView
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:drawablePadding="2dp"
+                            android:gravity="center"
+                            android:text="1000"
+                            android:textColor="@color/c_009BEF"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:leftDrawable="@drawable/diamond"
+                            app:leftDrawableHeight="9dp"
+                            app:leftDrawableWidth="12dp" />
 
+                        <TextView
+                            android:id="@+id/tv_hide_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text='@{String.valueOf(model.confirmOrderInfoBean.price)}'
+                            android:textColor="@color/c_cccccc"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text='@{"/" + model.confirmOrderInfoBean.units}'
+                            android:textColor="@color/c_009BEF"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -293,7 +340,7 @@
                         android:layout_width="27dp"
                         android:layout_height="31dp"
                         android:layout_marginEnd="40dp"
-                        android:onClick="@{() -> clickProxy.minOrder()}"
+                        android:onClick="@{() -> clickProxy.minOrder() }"
                         android:padding="10dp"
                         android:src="@drawable/left_arrow"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -330,7 +377,7 @@
                         android:layout_height="wrap_content"
                         android:drawablePadding="2dp"
                         android:gravity="center"
-                        android:text="@{String.valueOf(model.confirmOrderInfoBean.price * model.orderNum)}"
+                        android:text="@{model.confirmOrderInfoBean.events_one_buy == 0 ? String.valueOf(model.confirmOrderInfoBean.price * model.orderNum) : `1000`}"
                         android:textColor="@color/c_009BEF"
                         android:textSize="14sp"
                         android:textStyle="bold"

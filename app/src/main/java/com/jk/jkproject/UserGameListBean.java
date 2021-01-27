@@ -45,5 +45,6 @@ public class UserGameListBean extends BaseInfo {
         public String name;
         public String nickname;
         public String img;
+        public int events_one_buy;
     }
 }

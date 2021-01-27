@@ -1,6 +1,7 @@
 package com.jk.order
 
 import android.content.Intent
+import android.graphics.Paint
 import android.os.Bundle
 import androidx.core.widget.addTextChangedListener
 import androidx.databinding.library.baseAdapters.BR
@@ -47,6 +48,11 @@ class OrderConfirmActivity : BaseActivity<OrderViewModel, ActivityOrderconfirmBi
 
         back.click {
             finish()
+        }
+        //设置原价中划线
+        tv_hide_price.paint.apply {
+            flags = Paint.STRIKE_THRU_TEXT_FLAG
+            isAntiAlias = true
         }
     }
 
@@ -128,6 +134,8 @@ class OrderConfirmActivity : BaseActivity<OrderViewModel, ActivityOrderconfirmBi
     inner class ConfirmClickProxy {
 
         fun plusOrder() {
+            if(mViewModel.confirmOrderInfoBean.value != null && mViewModel.confirmOrderInfoBean.value!!.events_one_buy == 1)
+                return
             var num = mViewModel.orderNum.value
             num++
             mViewModel.orderNum.postValue(num)

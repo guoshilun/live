@@ -23,5 +23,6 @@ data class ConfirmOrderInfoBean(
     var sex: Int = 0,
     var type: Int = 0,
     var units: String = "",
-    var userGrade: String = ""
+    var userGrade: String = "",
+    var events_one_buy: Int = 0,
 ) : Parcelable
