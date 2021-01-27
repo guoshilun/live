@@ -404,13 +404,13 @@ public class ChatUiHelper {
         }
         hideSoftInput();
         int finalSoftInputHeight = softInputHeight;
-        mBottomLayout.postDelayed(new Runnable() {
-            @Override
-            public void run() {
+//        mBottomLayout.postDelayed(new Runnable() {
+//            @Override
+//            public void run() {
                 mBottomLayout.getLayoutParams().height = finalSoftInputHeight;
                 mBottomLayout.setVisibility(View.VISIBLE);
-            }
-        },200);
+//            }
+//        },200);
 
     }
 
