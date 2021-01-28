@@ -59,6 +59,10 @@ interface ApiService {
     @FormUrlEncoded
     suspend fun submitOrder(@FieldMap map: MutableMap<String, Any>): JKResponse<SubmitBean>
 
+    @POST("/zbj/Gateway/luckOrder")
+    @FormUrlEncoded
+    suspend fun luckOrder(@FieldMap map: MutableMap<String, Any>): JKResponse<OrderLuckBean>
+
     @POST("TAO/Order/OrderInfo")
     @FormUrlEncoded
     suspend fun getOrderInfo(@Field("orderId") id: String): JKResponse<OrderInfoBean>

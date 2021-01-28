@@ -28,3 +28,4 @@ data class PlayUserListBean(
     var video_duration: String = "",
     var events_one_buy:Int = 0 //是否开通一元购 0.未开通 1.开通
 ) : Parcelable
+

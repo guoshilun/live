@@ -34,7 +34,8 @@ public class Urls {
 
     public static String getUrl() {
         if (BuildConfig.DEBUG){
-            return "http://39.100.228.217:7777/"; //内网
+//            return "http://39.100.228.217:7777/"; //内网
+            return "http://47.92.111.211/"; //外网
         }else{
             return "http://live.lingdangji.com:7777/";
         }

@@ -5,7 +5,8 @@ ext {
     ]
 
     roots = [
-            test_base_url:"\"http://39.100.228.217:7777/\"",
+//            test_base_url:"\"http://39.100.228.217:7777/\"",
+            test_base_url:"\"http://47.92.111.211/\"",
             base_url:"\"http://live.lingdangji.com:7777/\""
     ]
 }

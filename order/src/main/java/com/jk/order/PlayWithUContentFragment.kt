@@ -125,7 +125,8 @@ class PlayWithUContentFragment :
         mAdapter.noDoubleClickListener { _, _, position ->
             val b = Bundle()
             b.putString("u_id",mAdapter.data[position].userId)
-            ARouter.getInstance().build("/jk/homepage").with(b).navigation(mActivity)
+//            ARouter.getInstance().build("/jk/homepage").with(b).navigation(mActivity)
+            ARouter.getInstance().build("/order/luck").with(b).navigation(mActivity)
         }
     }
 
